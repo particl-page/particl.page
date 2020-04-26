@@ -1,0 +1,20 @@
+@import "/fonts/fonts.css";
+
+:root {
+  --bg: #eee;
+
+  --font: "Source_Sans_Pro";
+  --font-heading: "Raleway_";
+}
+
+body {
+  font-family: var(--font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+main {
+  background: var(--bg);
+}

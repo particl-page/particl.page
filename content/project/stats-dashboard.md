@@ -2,7 +2,7 @@
 title: Stats Dashboard
 featured_image: "/images/projects/stats.png"
 omit_header_text: true
-description: Tracking Particl stats in style, all-in-one
+summary: Tracking Particl stats in style, all-in-one
 type: page
 #menu: main
 ---
