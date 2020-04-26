@@ -5,7 +5,7 @@ title = "Particl.page"
 
 MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
-SectionPagesMenu = "main"
+#SectionPagesMenu = "main"
 Paginate = 5 # this is set low for demonstrating with dummy content. Set to a higher number
 googleAnalytics = ""
 enableRobotsTXT = true
@@ -16,7 +16,6 @@ enableRobotsTXT = true
   filename = "sitemap.xml"
 
 [params]
-  favicon = ""
   description = "Community-run site around privacy-focused crypto project Particl.io"
   facebook = ""
   twitter = "https://twitter.com/particl_page"
@@ -37,3 +36,8 @@ enableRobotsTXT = true
   featured_image = "/images/particl-basics/particl_basics-poster.jpg"
   recent_posts_number = 3
   custom_css = ["particl-page.css"]
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"

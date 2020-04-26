@@ -2,7 +2,9 @@
 title: "About"
 description: "Particl, served by the Community"
 #featured_image: "/images/particl-basics/particl_basics-poster.jpg"
-menu: "main"
+menu:
+  main:
+    weight: 10
 layout: "page"
 ---
 

@@ -2,9 +2,17 @@
 
 :root {
   --bg: #eee;
+  --bg-muted: #dfdfdf;
+  --text: #101414;
+  --text-muted: #676d6d;
+
+  --color-primary: #B9FF74;
+  --color-secondary: #04CDE8;
 
   --font: "Source_Sans_Pro";
   --font-heading: "Raleway_";
+
+  --radius: 4px;
 }
 
 /* ------------------ GENERAL ------------------ */
@@ -15,12 +23,37 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+  color: var(--text);
+  margin-top: 5rem;
 }
 
 video {
   width: 100%;
   max-width: 100%;
   height: auto;
+}
+
+article p {
+  color: var(--text-muted);
+  font-family: var(--font);
+}
+article p > img {
+  margin: 2.5rem 0;
+  border-radius: var(--radius);
+}
+article p > strong {
+  font-weight: 500;
+  color: var(--text);
+}
+
+article ul, ol {
+  font-family: var(--font);
+}
+
+article hr {
+  margin: 3.5rem 0;
+  border: none;
+  border-top: 1px solid var(--bg-muted);
 }
 
 /* ------------------ LAYOUT ------------------ */
@@ -32,7 +65,24 @@ main {
 
 /* ------------------ SPECIFIC ------------------ */
 
-
+.footnotes {
+  margin: 4rem 0 3rem;
+  font-size: 1rem;
+}
+.footnotes hr {
+  border: none;
+  border-top: 1px solid var(--bg-muted);
+}
+.footnotes ol {
+  padding: 1rem 0 0 3rem;
+}
+.footnotes li p {
+  margin: 0 0 0.3rem 0;
+}
+.footnote-ref {
+  margin: 0 0.2rem 0 0.1rem;
+  font-weight: 500;
+}
 
 
 /* ------------------ PLUG-INS ------------------ */
