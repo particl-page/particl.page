@@ -1,7 +1,7 @@
 baseURL = "https://particl.page/"
 languageCode = "en-us"
 title = "Particl.page"
-theme = "particl-page"
+#theme = "particl-page"
 
 MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
