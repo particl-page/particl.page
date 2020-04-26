@@ -1,7 +1,9 @@
 ---
 title: "About"
 description: "Particl, served by the Community"
-#featured_image: ''
+#featured_image: "/images/particl-basics/particl_basics-poster.jpg"
+menu: "main"
+layout: "page"
 ---
 
 Particl.page is a community-run effort to grow [Particl ecosystem](https://particl.io) and offer useful user-centric tools. We also want to bring some “play” back into crypto – remember the old days and its community?

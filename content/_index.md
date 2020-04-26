@@ -1,6 +1,6 @@
 ---
 title: "Particl.page"
-featured_image: '/images/gohugo-default-sample-hero-image.jpg'
+featured_image: "/images/particl-basics/particl_basics-poster.jpg"
 description: "Community-run site around privacy-focused crypto Particl Project"
 ---
 

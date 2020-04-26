@@ -34,6 +34,6 @@ enableRobotsTXT = true
   show_reading_time = true
   #body_classes = "sans-serif bg-near-white"
   post_content_classes = "sans-serif"
-  featured_image = "/images/gohugo-default-sample-hero-image.jpg"
+  featured_image = "/images/particl-basics/particl_basics-poster.jpg"
   recent_posts_number = 3
   custom_css = ["particl-page.css"]
