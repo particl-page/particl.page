@@ -1,4 +1,4 @@
-baseURL = "https://particl.page/"
+baseURL = "https://dev.particl.page/"
 languageCode = "en-us"
 title = "Particl.page"
 #theme = "particl-page"
