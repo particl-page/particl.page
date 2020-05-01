@@ -73,7 +73,7 @@ Let us know your feedback and – if you have – your questions as well. We'll 
 
 You're kindly invited to join our Particl community on [Riot](https://riot.im/app/#/room/#particl:matrix.org), [Discord](https://discord.me/particl), [Telegram](https://t.me/particlproject) and the official [forums](https://particl.community).
 
-And keep in touch with us, Particl.page on [Twitter](https://twitter.com/particl_page), [Medium](https://medium.com/particl-page) or [Plume](https://fediverse.blog/~/Particlpage). We'll be happy to have you!
+And keep in touch with us, Particl.page on [Twitter](https://twitter.com/particl_page), [Medium](https://medium.com/particl-page) or [Publish0x](https://www.publish0x.com/particl-page?a=GRb4xmRJbB). We'll be happy to have you!
 
 
 [^1]: [Particl blockchain](https://particl.wiki/learn/particl-specifications) specifications
