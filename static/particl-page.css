@@ -33,13 +33,34 @@ video {
   height: auto;
 }
 
+figure {
+  background: var(--bg-muted);
+  margin: 1.5rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-align: center;
+}
+figure a:hover img,
+figure a:focus img {
+  opacity: 0.95;
+}
+figcaption p {
+  margin: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-style: italic;
+}
+
 article p {
   color: var(--text-muted);
   font-family: var(--font);
 }
-article p > img {
+article p img {
   margin: 2.5rem 0;
   border-radius: var(--radius);
+}
+article p a:hover img,
+article p a:focus img {
+  opacity: 0.95;
 }
 article p > strong {
   font-weight: 500;

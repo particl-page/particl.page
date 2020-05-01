@@ -23,7 +23,7 @@ enableRobotsTXT = true
   medium = "https://medium.com/particl-page"
   instagram = ""
   youtube = ""
-  github = ""
+  github = "https://github.com/particl-page"
   gitlab = ""
   linkedin = ""
   mastodon = ""
@@ -37,6 +37,11 @@ enableRobotsTXT = true
   featured_image = "/images/particl-basics/particl_basics-poster.jpg"
   recent_posts_number = 3
   custom_css = ["particl-page.css"]
+
+# https://gohugo.io/content-management/urls/
+[permalinks]
+  posts = "/:year/:slug/"
+  projects = "/:sections/:slug/"
 
 [taxonomies]
   category = "categories"

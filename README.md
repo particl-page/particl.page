@@ -1,5 +1,29 @@
 # particl.page
 
+## Build
+
+Assets are compiled using Webpack in `src/` directory:
+
+```
+cd src/
+yarn install
+yarn build
+```
+
+Building the whole site via Hugo happens automatically after commiting to `master` on GitHub.
+
+For local development, install Hugo locally and run dev server via:
+
+```
+hugo server -D
+```
+
+
+## Notes
+
+- [Tachyons docs](http://tachyons.io/docs/) (in-markup styling)
+
+
 ## Shortcodes reference
 
 Links:

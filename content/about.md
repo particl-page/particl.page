@@ -18,6 +18,7 @@ Discover our [projects](/projects) &bull; [articles](/articles) &bull; [tutorial
 ## Contact
 
 - Twitter: [@particl_page](https://twitter.com/particl_page)
+- Riot: [@particl.page](https://riot.im/app/#/room/#particl:matrix.org)
 - xnnms at protonmail dot com
 
 
