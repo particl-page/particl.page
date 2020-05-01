@@ -1,13 +1,12 @@
 ---
-date: 2020-04-29T19:17:06+02:00
+date: 2020-05-01T19:07:06+02:00
 title: "Particl Basics #2: Staking"
-summary: ""
+summary: "We're already familiar with Particl's privacy coin, so let's see how it can work for you – it's time to get into staking."
 featured_image: "/images/particl-basics/02-staking/header-compressor.jpg"
 category: "articles"
 tags: ["staking"]
 series: ["Particl Basics"]
 author: "xe-non"
-draft: true
 ---
 
 Welcome back to our bite-sized series about core features of #private crypto [Particl Project](https://particl.io)!
