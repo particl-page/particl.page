@@ -2,10 +2,25 @@
   <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
     {{ .Content }}
   </article>
+
   {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
   {{ $postsSection := slice "post" }}
   {{ $projectsSection := slice "project" }}
   {{ $howtosSection := slice "howto" }}
+  
+
+  {{/* Display couple of Projects */}}
+  {{ $projects := where .Site.RegularPages "Section" "in" $projectsSection }}
+  {{ $projects_count := len $projects }}
+  {{ if ge $projects_count 1 }}
+    <section class="flex-ns flex-wrap justify-center mw9 center mb4">
+      {{ range (first 3 $projects) }}
+        <div class="relative w-100 w-20-l ma3 bg-white">
+          {{- partial "vertical-summary-with-image.html" . -}}
+        </div>
+      {{ end }}
+    </section>
+  {{ end }}
 
 
   {{/* Create a variable with that section to use in multiple places. */}}

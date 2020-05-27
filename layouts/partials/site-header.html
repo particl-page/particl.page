@@ -1,4 +1,5 @@
 {{ $featured_image := .Param "featured_image"}}
+
 {{ if $featured_image }}
   {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
   {{ $featured_image := (trim $featured_image "/") | absURL }}
@@ -17,7 +18,9 @@
       </div>
     </div>
   </header>
+
 {{ else }}
+
   <header>
     <div class="pb3-m pb6-l {{ .Site.Params.background_color_class | default "bg-black" }}">
       {{ partial "site-navigation.html" . }}
@@ -33,4 +36,5 @@
       </div>
     </div>
   </header>
+
 {{ end }}

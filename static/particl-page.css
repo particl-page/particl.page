@@ -79,6 +79,10 @@ article hr {
 
 /* ------------------ LAYOUT ------------------ */
 
+nav .logo {
+  width: 1.5rem; margin-right: 0.5rem;
+  position: relative; top: 0.2rem;
+}
 main {
   background: var(--bg);
 }
