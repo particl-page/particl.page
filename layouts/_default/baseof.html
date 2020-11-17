@@ -40,7 +40,7 @@
     {{- template "_internal/twitter_cards.html" . -}}
 
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
-      <script async src="https://ackee.allien.work/ackee-ts.js" data-ackee-server="https://ackee.allien.work" data-ackee-domain-id="15d189f3-c58d-4b9c-a90d-fc9f134e6267"></script>
+      <script async defer data-domain="particl.page" src="https://plausible.allien.work/js/plausible.js"></script>
     {{ end }}
   </head>
 
