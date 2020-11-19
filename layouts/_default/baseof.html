@@ -40,7 +40,7 @@
     {{- template "_internal/twitter_cards.html" . -}}
 
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
-      <script async defer data-domain="particl.page" src="https://plausible.allien.work/js/plausible.js"></script>
+      <script async defer data-domain="particl.page" src="https://plausible.particl.page/js/plausible.js"></script>
     {{ end }}
   </head>
 
