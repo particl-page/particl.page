@@ -41,6 +41,7 @@
 
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
       <script async defer data-domain="particl.page" src="https://plausible.allien.work/js/plausible.js"></script>
+      <script data-goatcounter="https://views.particl.page/count" async src="//views.particl.page/count.js"></script>
     {{ end }}
   </head>
 
