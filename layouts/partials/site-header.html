@@ -1,19 +1,27 @@
 <header>
+	<section class="hero is-medium is-dark">
 
-	{{ partial "nav/responsive-nojs.html" . }}
+		<div class="hero-head">
+			<div class="container">
+				{{ partial "nav/bulma-navbar.html" . }}
+			</div>
+		</div><!-- .hero-head -->
 
-	<div class="page-title">
+		<div class="hero-body">
+			<div class="container">
 
-		<h1 class="title is-2 is-spaced">
-			{{ .Title | default .Site.Title }}
-		</h1>
+				<h1 class="title is-2 is-spaced">
+					{{ .Title | default .Site.Title }}
+				</h1>
+				
+				{{ with .Params.Summary }}
+				<p class="subtitle is-5 lead">
+					{{ . }}
+				</p>
+				{{ end }}
+				
+			</div><!-- .container -->
+		</div><!-- .hero-body -->
 
-		{{ with .Params.Summary }}
-		<p class="subtitle is-5 lead">
-			{{ . }}
-		</p>
-		{{ end }}
-
-	</div><!-- .page-title -->
-
+	</section>
 </header>

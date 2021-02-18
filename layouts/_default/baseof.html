@@ -63,10 +63,22 @@
 	{{ partial "site-header.html" . }}
 	{{ end }}
 
-	<main role="main" class="content">
-		{{/* partial "breadcrumbs.html" . */}}
-		{{ block "main" . }}{{ end }}
-	</main>
+
+	<div class="container">
+		<div class="columns">
+
+			<main role="main" class="content column">
+				{{/* partial "breadcrumbs.html" . */}}
+				{{ block "main" . }}{{ end }}
+			</main>
+
+			<div class="sidebar column is-3">
+				{{ partial "nav/sidebar.html" . }}
+			</div>
+
+		</div><!-- .columns -->	
+	</div><!-- .container -->
+
 
 	{{ block "footer" . }}
 	{{ partial "site-footer.html" . }}
