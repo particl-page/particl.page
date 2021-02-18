@@ -10,7 +10,7 @@ enableGitInfo = true
 
 # https://gohugo.io/content-management/urls/
 [permalinks]
-  post = "/:sections/:year/:slug/"
+  post = "/:sections/:slug/"
   project = "/:sections/:slug/"
 
 [params]

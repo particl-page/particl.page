@@ -1,10 +1,13 @@
 ---
+date: 2020-04-24T16:13:00-04:00
 title: "Pool: Check your staking stats"
 featured_image: "/images/howto/check-pool-stats/pool-address-stats.png"
 omit_header_text: true
 summary: "Access overview of your staking progress and stats on pool.particl.page"
 type: "page"
 author: "xe-non"
+aliases:
+  - "/howto/check-pool-staking-stats"
 ---
 
 We’ve recently launched pool staking statistics for individual addresses on [our Pool](https://pool.particl.page). To check your stats, you’ll need to know your pool staking address.

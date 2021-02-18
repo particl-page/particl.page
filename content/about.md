@@ -12,14 +12,14 @@ Particl.page is a community-run effort to grow [Particl ecosystem](https://parti
 
 Community is at heart of every project, crypto or otherwise. We want to stimulate a nice, friendly community around Particl Project and help it grow. To educate people in the process. To offer a helping hand and guidance for those, who seek it.
 
-Discover our [projects](/projects) &bull; [articles](/articles) &bull; [tutorials](/howto)
+Discover our [projects](/projects) &bull; [articles](/articles) &bull; [tutorials](/tutorials)
 
 
 ## Contact
 
 - Twitter: [@particl_page](https://twitter.com/particl_page)
 - Riot: [@particl.page](https://riot.im/app/#/room/#particl:matrix.org)
-- xnnms at protonmail dot com
+- xe-non at particl dot page
 
 
 ## Donate

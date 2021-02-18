@@ -6,6 +6,8 @@ summary: Particl Staking pool with low fees and fair reward distribution
 type: page
 author: "xe-non"
 #menu: main
+aliases:
+  - "/project/cold-staking-pool"
 ---
 
 > Particl Staking pool with low fees and fair reward distribution

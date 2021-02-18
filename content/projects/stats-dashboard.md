@@ -6,6 +6,8 @@ summary: Tracking Particl stats in style, all-in-one
 type: page
 author: "xe-non"
 #menu: main
+aliases:
+  - "/project/stats-dashboard"
 ---
 
 > Tracking Particl stats in style, all-in-one
