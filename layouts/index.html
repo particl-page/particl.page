@@ -1,7 +1,8 @@
 {{ define "main" }}
 
 {{/* "Type" "in" "<section name AKA folder in /content/>" */}}
-{{ $posts 		:= where .Site.RegularPages "Type" "in" "posts" }}
+{{ $articles	:= where .Site.RegularPages "Type" "in" "articles" }}
+{{ $tutorials := where .Site.RegularPages "Type" "in" "tutorials" }}
 {{ $projects 	:= where .Site.RegularPages "Type" "in" "projects" }}
 
 
@@ -22,10 +23,10 @@
 
 <section class="article-list">
 	<header>
-		<h2>{{ i18n "latest-articles" }}</h2>
+		<h2>Latest articles</h2>
 	</header>
 
-	{{ range first 5 $posts }}
+	{{ range first 5 $articles }}
 	{{- partial "summary.html" . -}}
 	{{ end }}
 
@@ -37,9 +38,26 @@
 </section><!-- .article-list -->
 
 
+<section class="tutorials-list">
+	<header>
+		<h2>Latest tutorials</h2>
+	</header>
+
+	{{ range first 5 $tutorials }}
+	{{- partial "summary.html" . -}}
+	{{ end }}
+
+	<footer>
+		{{ with .Site.GetPage "section" "tutorial" }}
+		<a href="{{ .Permalink }}">{{ T "all-tutorials" }} &rarr;</a>
+		{{ end }}
+	</footer>
+</section><!-- .projects-list -->
+
+
 <section class="projects-list">
 	<header>
-		<h2>{{ i18n "latest-projects" }}</h2>
+		<h2>Latest projects</h2>
 	</header>
 
 	{{ range first 5 $projects }}

@@ -1,25 +1,27 @@
-<div class="h-entry">
-	<h1 class="p-name">
-		<a href="{{ .Permalink }}">
-			{{ .Title }}
-		</a>
-	</h1>
-	<p>
-		<span class="section">{{ humanize .Section }}</span>
-		<time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
-		{{ with .Params.Author }}<span class="p-author h-card">{{ . }}</span>{{ end }}
-		<span>
-			{{ range (.GetTerms "categories") }}
-				<a href="{{ .Permalink }}" class="p-category">{{ .LinkTitle }}</a>
-			{{ end }}
-		</span>
-		<span>
-			{{ range (.GetTerms "tags") }}
-				<a href="{{ .Permalink }}" class="p-category">{{ .LinkTitle }}</a>
-			{{ end }}
-		</span>
-	</p>
-	<div class="p-summary">
-		{{ .Summary }}
+<div class="card h-entry">
+	<div class="card-content">
+		<h1 class="title is-4 p-name">
+			<a href="{{ .Permalink }}">
+				{{ .Title }}
+			</a>
+		</h1>
+		<p>
+			<span class="tag">{{ humanize .Section | singularize }}</span>
+			<time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+			{{ with .Params.Author }}<span class="p-author h-card">{{ . }}</span>{{ end }}
+			<span>
+				{{ range (.GetTerms "categories") }}
+					<a href="{{ .Permalink }}" class="p-category">{{ .LinkTitle }}</a>
+				{{ end }}
+			</span>
+			<span>
+				{{ range (.GetTerms "tags") }}
+					<a href="{{ .Permalink }}" class="p-category">{{ .LinkTitle }}</a>
+				{{ end }}
+			</span>
+		</p>
+		<div class="p-summary">
+			{{ .Summary }}
+		</div>
 	</div>
 </div>

@@ -4,12 +4,12 @@
 
 	<div class="page-title">
 
-		<h1>
+		<h1 class="title is-2 is-spaced">
 			{{ .Title | default .Site.Title }}
 		</h1>
 
 		{{ with .Params.Summary }}
-		<p class="lead">
+		<p class="subtitle is-5 lead">
 			{{ . }}
 		</p>
 		{{ end }}
