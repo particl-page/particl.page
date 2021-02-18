@@ -4,6 +4,7 @@ title: "Pool: Staking with Particl Desktop"
 #omit_header_text: true
 summary: "Staking setup walkthrough with Particl Desktop"
 type: "page"
+author: "xe-non"
 ---
 
 ## Set-up pool staking

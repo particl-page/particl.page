@@ -1,0 +1,33 @@
+<h3>About Author</h3>
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ range where $data.authors "name" "==" .Params.Author }}
+
+  <div class="h-card">
+
+    {{ with .photo }}
+    <img class="u-photo" src="{{ . }}">
+    {{ end }}
+
+    <h4 class="p-name">{{ .name }}</h4>
+
+    {{ with .bio }}
+    <p class="p-note">{{ . }}</p>
+    {{ end }}
+
+    {{ with .homepage }}
+    <a class="u-url" href="{{ . }}">{{ . }}</a>
+    {{ end }}
+    
+    {{ with .email }}
+    <a class="u-email" href="mailto:{{ . }}">{{ . }}</a>
+    {{ end }}
+
+    {{ with .twitter_username }}
+    <a class="u-url" rel="me" href="https://twitter.com/{{ . }}">@{{ . }}</a>
+    {{ end }}
+
+  </div>
+
+{{ end }}

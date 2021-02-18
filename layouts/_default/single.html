@@ -1,71 +1,79 @@
-{{ define "header" }}
-   {{/* We can override any block in the baseof file be defining it in the template */}}
-  {{ partial "page-header.html" . }}
-{{ end }}
+{{/* define "header" */}}
+{{/* We can override any block in the baseof file be defining it in the template */}}
+{{/* partial "page-header.html" . */}}
+{{/* end */}}
+
+
 
 {{ define "main" }}
-  {{ $section := .Site.GetPage "section" .Section }}
-  <article class="flex-l flex-wrap justify-between mw7 center ph3">
-    <header class="mt5 w-100">
-      <aside class="instapaper_ignoref b tracked">
-          {{/*
-          CurrentSection allows us to use the section title instead of inferring from the folder.
-          https://gohugo.io/variables/page/#section-variables-and-methods
-          */}}
-        {{with .CurrentSection.Title }}{{. | upper }}{{end}}
-      </aside>
-      <!--{{ partial "social-share.html" . }}-->
-      <h1 class="f2 mt3 mb1">
-        {{- .Title -}}
-      </h1>
-      <p class="meta f5 mb4 mid-gray">
-        Published
-        <time class="dib" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-          {{- .Date.Format "January 2, 2006" -}}
-        </time>
-        {{ with .Params.author }}
-          by <strong>
-          {{ if reflect.IsSlice . }}
-              {{ delimit . ", " | markdownify }}
-          {{else}}
-              {{ . | markdownify }}
-          {{ end }}
-          </strong>
-        {{ end }}
-        {{/*
-          Show "reading time" and "word count" but only if one of the following are true:
-          1) A global config `params` value is set `show_reading_time = true`
-          2) A section front matter value is set `show_reading_time = true`
-          3) A page front matter value is set `show_reading_time = true`
-        */}}
-        {{ if (or (eq (.Param "show_reading_time") true) (eq $section.Params.show_reading_time true) )}}
-          <span class="reading-time"> - {{ .ReadingTime}} minutes read</span>
-          <span class="word-count"> - {{ .WordCount}} words</span>
-        {{ end }}
-      </p>
-    </header>
-    <div class="nested-copy-line-height lh-copy {{ $.Param "post_content_classes"  | default "serif"}} f4 nested-links nested-img mid-gray">
+{{ $section := .Site.GetPage "section" .Section }}
+<article class="h-entry">
 
-      {{- .Content -}}
+	<header>
+		<p>
+			{{/*
+			CurrentSection allows us to use the section title instead of inferring from the folder.
+			https://gohugo.io/variables/page/#section-variables-and-methods
+			*/}}
+			{{ with .CurrentSection.Title }}{{ . | upper }}{{ end }}
+		</p>
 
-      {{- partial "tags.html" . -}}
+		{{ with .Params.Image }}
+			<div class="featured-image">
+				<img src="{{ . }}">
+			</div>
+		{{ end }}
 
-      {{ partial "social-share.html" . }}
+		<h1 class="p-name">
+			{{- .Title -}}
+		</h1>
 
-      <!--div class="comments mt6 instapaper_ignoref">
-      {{ if .Site.DisqusShortname }}
-        {{ template "_internal/disqus.html" . }}
-      {{ end }}
-      {{ if .Site.Params.commentoEnable }}
-        {{- partial "commento.html" . -}}
-      {{ end }}
-      </div-->
+		{{ with .Params.Summary }}
+			<p class="p-summary">{{ . }}</p>
+		{{ end }}
 
-    </div>
 
-    <aside class="w-30-l mt6-l">
-      {{- partial "menu-contextual.html" . -}}
-    </aside>
+		{{/* Hugo uses Go's date formatting is set by example. Here are two formats */}}
+		<p>
+			Written
+			<time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+				{{- .Date.Format "January 2, 2006" -}}
+			</time>
+			by
+			<span class="p-author h-card">{{ .Params.Author }}</span>
+			&bull;
+			Updated
+			<time class="dt-updated" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+				{{- .Lastmod.Format "January 2, 2006" -}}
+			</time>
+		</p>
 
-  </article>
+	</header>
+
+	{{ partial "toc.html" . }}
+
+	<section class="e-content">
+		{{- .Content -}}
+	</section>
+	
+	<footer>
+		{{- partial "about-author.html" . -}}
+		{{- partial "tags.html" . -}}
+		{{- partial "categories.html" . -}}
+	</footer>
+
+	<aside>
+		{{- partial "menu-contextual.html" . -}}
+  </aside>
+  
+  <aside>
+    {{ with .PrevInSection }}
+      <a class="previous" href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
+    {{ with .NextInSection }}
+      <a class="next" href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
+  </aside>
+
+</article>
 {{ end }}

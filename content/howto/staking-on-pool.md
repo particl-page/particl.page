@@ -4,6 +4,7 @@ title: "Pool: How to Stake"
 #omit_header_text: true
 summary: "How to setup staking on your Particl Desktop or Core (Qt)"
 type: "page"
+author: "xe-non"
 aliases:
   - /howto/staking-on-pool.html
 ---

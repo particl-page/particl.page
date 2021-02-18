@@ -1,75 +1,57 @@
 {{ define "main" }}
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    {{ .Content }}
-  </article>
 
-  {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
-  {{ $postsSection := slice "post" }}
-  {{ $projectsSection := slice "project" }}
-  {{ $howtosSection := slice "howto" }}
-  
-
-  {{/* Display couple of Projects */}}
-  {{ $projects := where .Site.RegularPages "Section" "in" $projectsSection }}
-  {{ $projects_count := len $projects }}
-  {{ if ge $projects_count 1 }}
-    <section class="flex-ns flex-wrap justify-center mw9 center mb4">
-      {{ range (first 3 $projects) }}
-        <div class="relative w-100 w-20-l ma3 bg-white">
-          {{- partial "vertical-summary-with-image.html" . -}}
-        </div>
-      {{ end }}
-    </section>
-  {{ end }}
+{{/* "Type" "in" "<section name AKA folder in /content/>" */}}
+{{ $posts 		:= where .Site.RegularPages "Type" "in" "posts" }}
+{{ $projects 	:= where .Site.RegularPages "Type" "in" "projects" }}
 
 
-  {{/* Create a variable with that section to use in multiple places. */}}
-  {{ $posts := where .Site.RegularPages "Section" "in" $postsSection }}
-  {{/* Check to see if the section is defined for ranging through it */}}
-  {{ $posts_count := len $posts }}
-  {{ if ge $posts_count 1 }}
-    {{/* Derive the section name  */}}
-    {{ $posts_name := index (.Site.Params.mainSections) 0 }}
+<article class="h-entry">
 
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
-      {{/* Use $posts_name to get the section title. Use "with" to only show it if it exists */}}
-       {{ with .Site.GetPage "section" $posts_name }}
-          <h1 class="flex-none mt0 mw8 center">
-            <!--{{ $.Param "recent_copy" | default (i18n "recentTitle" .) }}-->
-            Latest Articles
-          </h1>
-        {{ end }}
+	{{ with .Params.Image }}
+		<div class="featured-image">
+			<img src="{{ . }}">
+		</div>
+	{{ end }}
 
-      {{ $n_posts := $.Param "recent_posts_number" | default 3 }}
+	<section class="e-content">
+		{{- .Content -}}
+	</section>
 
-      <section class="w-100 mw8 center">
-        {{/* Range through the first $n_posts items of the section */}}
-        {{ range (first $n_posts $posts) }}
-          <div class="relative w-100 mb4">
-            {{ partial "summary-with-image.html" . }}
-          </div>
-        {{ end }}
-      </section>
+</article>
 
-      {{ if ge $posts_count (add $n_posts 1) }}
-      <section class="w-100">
-        <!--h1 class="f3">{{ i18n "more" }}</h1>
-        {{/* Now, range through the next four after the initial $n_posts items. Nest the requirements, "after" then "first" on the outside */}}
-        {{ range (first 4 (after $n_posts $posts))  }}
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="{{ .Permalink }}" class="link black dim">
-              {{ .Title }}
-            </a>
-          </h2>
-        {{ end }}-->
 
-        {{/* As above, Use $posts_name to get the section title, and URL. Use "with" to only show it if it exists */}}
-        {{ with .Site.GetPage "section" $posts_name }}
-          <a href="{{ .Permalink }}" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">{{ i18n "allTitle" . }}</a>
-        {{ end }}
-      </section>
-      {{ end }}
+<section class="article-list">
+	<header>
+		<h2>{{ i18n "latest-articles" }}</h2>
+	</header>
 
-      </div>
-  {{ end }}
+	{{ range first 5 $posts }}
+	{{- partial "summary.html" . -}}
+	{{ end }}
+
+	<footer>
+		{{ with .Site.GetPage "section" "post" }}
+		<a href="{{ .Permalink }}">{{ T "all-articles" }} &rarr;</a>
+		{{ end }}
+	</footer>
+</section><!-- .article-list -->
+
+
+<section class="projects-list">
+	<header>
+		<h2>{{ i18n "latest-projects" }}</h2>
+	</header>
+
+	{{ range first 5 $projects }}
+	{{- partial "summary.html" . -}}
+	{{ end }}
+
+	<footer>
+		{{ with .Site.GetPage "section" "project" }}
+		<a href="{{ .Permalink }}">{{ T "all-projects" }} &rarr;</a>
+		{{ end }}
+	</footer>
+</section><!-- .projects-list -->
+
+
 {{ end }}

@@ -1,0 +1,9 @@
+@import "normalize";
+
+:root {
+  --bg: #eee;
+}
+
+body {
+  background: var(--bg);
+}

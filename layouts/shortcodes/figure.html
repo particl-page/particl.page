@@ -1,0 +1,24 @@
+{{/*
+  
+  FIGURE SHORTCODE
+
+  Usage:
+    To be used in conjuction with {{< img >}} shortcode:
+
+    {{< figure class="grid two" figcaption="Inevitable" >}}
+      {{< img src="osky-1.jpg" alt="Selfie of me and Oskar the huskamute, he’s looking at me." >}}
+      {{< img src="osky-2.jpg" alt="Selfie of me and Oskar the huskamute, he’s licking my face." >}}
+    {{< /figure >}}
+
+  Source:
+    https://laurakalbag.com/processing-responsive-images-with-hugo/
+
+*/}}
+
+
+<figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
+  {{.Inner}}
+  <figcaption>
+    <p>{{ .Get "figcaption" }}</p>
+  </figcaption>
+</figure>

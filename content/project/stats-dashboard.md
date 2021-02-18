@@ -4,6 +4,7 @@ featured_image: "/images/projects/stats.png"
 omit_header_text: true
 summary: Tracking Particl stats in style, all-in-one
 type: page
+author: "xe-non"
 #menu: main
 ---
 

@@ -1,0 +1,11 @@
+{{/* if and (gt .WordCount 400 ) (.Params.toc) */}}
+{{ if (.Params.toc) }}
+
+<aside class="table-of-contents">
+  <header>
+  <p>Contents of this {{ humanize .Type | singularize }}</p>
+  </header>
+  {{.TableOfContents}}
+</aside>
+
+{{ end }}

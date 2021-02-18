@@ -1,0 +1,227 @@
+/*
+  RESPONSIVE MOBILE-DESKTOP MENU (NO JS)
+*/
+
+%box {
+  background: var(--color-white);
+  box-shadow: 0 1px 4px hsla(var(--text-hsl), 0.15);
+}
+
+
+nav#main {
+  @extend %box; // needs out or update
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  &.js-enabled { // toggled when JS is enabled
+    position: fixed;
+    top: 0;
+    transition: top 0.5s ease-in-out; // sliding transition when scrolling up/down
+  }
+  &.hidden { // hide on scrolling down (+ offset few px for box-shadow)
+    top: calc(-1 * var(--menu-height) - 5px);
+  }
+  .page-wrapper {
+    padding: 0 0 0 var(--paddingH);
+    @include break(m) {
+      padding: 0 var(--paddingH);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      line-height: var(--menu-height);
+    }
+  }
+  .branding {
+    display: inline-block;
+    line-height: var(--menu-height);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 390;
+    color: var(--text-muted);
+    @include break(m) {
+      flex: 0 0 8rem;
+      margin-right: 1rem;
+    }
+    @include break(l) {
+      font-size: 0.925rem;
+      position: relative;
+      top: 1px; // this is ugly, but different font = different placement (yeah and logo looks way better with Manrope!)
+    }
+    &:hover,
+    &:focus {
+      color: var(--color-primary);
+      font-weight: 480;
+      b {
+        color: var(--color-secondary);
+      }
+      svg {
+        fill: var(--color-secondary);
+      }
+    }
+    .logo {
+      position: relative;
+      top: 0.25rem;
+      margin-right: 0.3rem;
+      fill: var(--text);
+      @include break(l) {
+        top: 0.15rem;
+      }
+    }
+    b {
+      font-weight: 700;
+      color: var(--text);
+    }
+  }
+  #menu {
+    @extend %tfx;
+    display: none;
+    padding: 0 0 1.4rem calc(var(--paddingH) + var(--padding-page));
+    margin: 0 0 0 calc(-1 * var(--paddingH));
+    @include break(m) {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      flex: 1 0;
+      justify-content: space-between;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      @include break(m) {
+        display: inline-block;
+      }
+      li {
+        @include break(m) {
+          display: inline-block;
+        }
+        a {
+          display: block;
+          padding: 0.7rem 0;
+          border-bottom: 1px dotted var(--bg-muted);
+          color: var(--text);
+          text-transform: uppercase;
+          font-size: 0.9rem;
+          @include break(m) {
+            padding: 0 var(--menu-items-spacing);
+            border: 0;
+            color: var(--text-muted);
+          }
+          @include break(l) {
+            font-size: 0.925rem;
+          }
+          &.active {
+            color: var(--text);
+            font-weight: 500;
+          }
+          &:hover,
+          &:focus {
+            color: var(--color-primary);
+            font-weight: 500;
+          }
+        }
+        &:last-of-type {
+          a { border: 0; }
+        }
+      }
+      &.navigation {
+        order: 1;
+        @include break(m) {
+          margin-right: calc(-1 * var(--menu-items-spacing)); // offset link's horizontal padding - align with page
+          order: 2;
+        }
+      }
+    }
+    .translations {
+      order: 2;
+      @include break(m) {
+        order: 1;
+        margin-right: var(--paddingH);
+      }
+      svg {
+        height: 1rem;
+        fill: var(--text-muted);
+        position: relative;
+        top: 2px;
+        margin-right: 0.1rem;
+      }
+    }
+    h4 {
+      margin: 2rem 0 0 -1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .socials {
+      margin: 0.5rem 0 0;
+      order: 5;
+      h4 {
+        margin: 1rem 0 0.5rem -1rem;
+      }
+      a {
+        svg {
+          fill: var(--text-muted);
+          opacity: 0.55;
+        }
+        &:hover,
+        &:focus {
+          svg {
+            fill: var(--color-primary);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  #menu-toggle-label {
+    opacity: 0.5;
+    float: right;
+    padding: 0 var(--paddingH);
+    line-height: var(--menu-height);
+    @include break(m) {
+      display: none;
+    }
+    span {
+      position: relative; top: 0.25rem;
+    }
+    .ico-close { display: none; }
+    .label { // visually hide, keep for screen readers
+      position: absolute;
+      text-indent: -999rem;
+    }
+  }
+  #menu-toggle {
+    appearance: none;
+    margin: 0;
+    outline: none;
+    @include break(m) {
+      display: none;
+    }
+    &:hover,
+    &:focus {
+      & ~ #menu-toggle-label {
+        opacity: 1;
+      }
+    }
+    &:checked {
+      & ~ #menu-toggle-label {
+        .ico-close { display: inline-block; }
+        .ico-open { display: none; }
+      }
+      & ~ #menu {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 15px -8px hsla(var(--text-hsl), 0.6);
+        @include break(m) {
+          flex-direction: row;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  .--mobile-only {
+    @include break(m) {
+      display: none;
+    }
+  }
+}

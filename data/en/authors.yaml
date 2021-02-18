@@ -1,0 +1,6 @@
+- name: "xe-non"
+  photo: "https://placehold.it/150x150"
+  bio: "[EN] Enthusiastic author digging Hugo CMS!"
+  email: "author@example.com"
+  homepage: ""
+  twitter_username: "example"
