@@ -1,9 +1,17 @@
-@import "normalize";
+@charset "utf-8";
+
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+@import "~bulma/bulma";
 
 :root {
   --bg: #eee;
 }
 
-body {
+html {
   background: var(--bg);
 }
