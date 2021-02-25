@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Particl.page"
 
 # Allows for automatic "last modified" for articles etc. (https://gohugo.io/variables/git/)
-enableGitInfo = true
+enableGitInfo = false
 
 # Show all pages by default in this menu (if disabled, define menu location and weight for each page manually)
 #sectionPagesMenu = main
@@ -51,22 +51,10 @@ enableGitInfo = true
   tag = "tags"
   series = "series"
 
-
-# Default language
-DefaultContentLanguage = "en"
-# https://gohugo.io/content-management/multilingual/
-[languages]
-  [languages.en]
-    languageName = "English"
-    languageCode = "en"
-    weight = 1
-    [languages.en.params]
-      #AboutPage = /about/
-    # https://gohugo.io/content-management/taxonomies/
-    [languages.en.taxonomies]
-      category = "categories"
-      series = "series"
-      tag = "tags"
+[frontmatter]
+  date = ["date", "publishDate"]
+  lastmod = ["lastmod"]
+  publishDate = ["publishDate", "date"]
 
 [sitemap]
   changefreq = "monthly"

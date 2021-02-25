@@ -10,7 +10,7 @@
 		<div class="hero-body">
 			<div class="container">
 
-				<h1 class="title is-2 is-spaced">
+				<!--h1 class="title is-2 is-spaced">
 					{{ .Title | default .Site.Title }}
 				</h1>
 				
@@ -18,7 +18,8 @@
 				<p class="subtitle is-5 lead">
 					{{ . }}
 				</p>
-				{{ end }}
+				{{ end }}-->
+				{{ partial "page-header" . }}
 				
 			</div><!-- .container -->
 		</div><!-- .hero-body -->

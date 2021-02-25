@@ -1,8 +1,8 @@
 <header>
 
-	{{ with .CurrentSection.Title }}
+	{{/* with .CurrentSection.Title }}
 	<p>{{ . | upper }}</p>
-	{{ end }}
+	{{ end */}}
 
 	{{ with .Params.Image }}
 	<div class="featured-image">
@@ -10,30 +10,35 @@
 	</div>
 	{{ end }}
 	
-	<h1 class="title is-1 p-name is-spaced">
-		{{ .Title }}
+	<h1 class="title is-2 p-name is-spaced">
+		{{- .Title | default .Site.Title -}}
 	</h1>
 	
 	{{ with .Params.Summary }}
-	<p class="subtitle is-4 p-summary">{{ . }}</p>
+	<p class="subtitle is-5 p-summary">{{ . }}</p>
 	{{ end }}
-	
-	<p class="subtitle is-5 lead">
-		{{ .Params.Description }}
-	</p>
 
-	<p>
+	<p class="meta">
+
+		{{ with .Date }}
 		Written
-		<time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-			{{- .Date.Format "January 2, 2006" -}}
+		<time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+			{{- .Format "January 2, 2006" -}}
 		</time>
+		{{ end }}
+
+		{{ with .Params.Author }}
 		by
-		<span class="p-author h-card">{{ .Params.Author }}</span>
+		<span class="p-author h-card">{{ . }}</span>
+		{{ end }}
+
+		{{ with .Lastmod }}
 		&bull;
 		Updated
-		<time class="dt-updated" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
-			{{- .Lastmod.Format "January 2, 2006" -}}
+		<time class="dt-updated" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+			{{- .Format "January 2, 2006" -}}
 		</time>
+		{{ end }}
 	</p>
 
 </header>
