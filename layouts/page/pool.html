@@ -1,0 +1,124 @@
+{{ define "main" }}
+
+<div class="card">
+	<article class="card-content h-entry">
+		{{ partial "page-header" . }}
+		<div class="e-content">
+			{{ .Content }}
+		</div>
+		<!-- Gets populated by JSON data from Pool API -->
+		<div id="stats-container"></div>
+	</article>
+</div>
+
+
+<script>
+	// source: https://howtocreateapps.com/fetch-and-display-json-html-javascript/
+
+	// grab Particl Pool JSON data
+	fetch('https://pool.particl.page/json')
+	.then(function (response) {
+		return response.json();
+	})
+	.then(function (data) {
+		appendData(data);
+		//console.log(data);
+	})
+	.catch(function (err) {
+		console.log(err);
+	});
+	
+
+	function appendData(data) {
+		// fetch HTML placeholder for data
+		var mainContainer = document.getElementById("stats-container");
+		// Loop through JSON object
+		//for (var i = 0; i < data.length; i++) {
+			// Add DIV for each and insert data
+			var div = document.createElement("div");
+			div.innerHTML = 'Pool height: ' + data.poolheight;
+			// Append all that to our main container
+			mainContainer.appendChild(div);
+		//}
+	}
+</script>
+
+<!-- JSON data preview: --------------------------------------------
+
+{
+  "poolmode": "master",
+  "poolheight": 884327,
+  "blocksfound": 27113,
+  "totaldisbursed": 2152959438164,
+  "poolrewardtotal": 56814486586,
+  "poolfeestotal": 2149991178,
+  "poolwithdrawntotal": 54186929540,
+  "lastpaymentrunheight": 884121,
+  "lastblocks": [
+    [
+      884327,
+      "3bbd5f87045f978c0f8971376e058191bd3b8cebe7e193b1b96637d3bdb523ec",
+      66910391,
+      53716860016668
+    ],
+    [
+      884309,
+      "8523e4a1de4e4bd1a5ef685f9e8977e81323bd31ce9156108fd19eedc489f6e7",
+      66910308,
+      53716860016668
+    ],
+    [
+      884307,
+      "3e2de89d9969302062eb2d83286e47e4a5c99cb0180576d8904893426565569c",
+      66910302,
+      53716860016668
+    ],
+    [
+      884300,
+      "d0dab1e60c3d1763283493fd2d04f1e26cfd79f3c903628ed50993ff50ea9938",
+      66910267,
+      53716860016668
+    ],
+    [
+      884293,
+      "2447a0e1b9d2c570a5d345ae0c0fc5f34a6646f22c310fc60039d9cb7390ee16",
+      66948759,
+      53737947028024
+    ]
+  ],
+  "pendingpayments": [],
+  "lastpayments": [
+    [
+      884222,
+      "0ec0dd0ba4508e385000a1114a838654e14a87f913c4bac50d064eeec5dff5aa",
+      4841047741
+    ],
+    [
+      884222,
+      "063c5da2b8f5f43c78d5db2ec3d14c67db85f12429ed6ce00c9d224670b05449",
+      3039200376
+    ],
+    [
+      883222,
+      "f8cb42fb87c8ee957875d2eadc23fc40926efd08a5feda3660051cf4ed23a1ca",
+      3867397355
+    ],
+    [
+      883222,
+      "f23f2a08ba88d975c7a1b6e301e6590cec6656ff58160b884db7be1ee6862c72",
+      2671470902
+    ],
+    [
+      882222,
+      "faf13d098352205267acbfd29c59a6db408677a9d5c93a21527c1c157ca0dde1",
+      2748794052
+    ]
+  ],
+  "stakeweight": 50559415868655,
+  "watchonlytotalbalance": 537169.18605621,
+  "stakedbalance": 15067.56622499
+}
+
+------------------------------------------------------------------->
+
+{{ end }}
