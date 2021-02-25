@@ -1,17 +1,43 @@
 @charset "utf-8";
 
-$purple: #8A4D76;
-$pink: #FA7C91;
-$brown: #757763;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
+// Particl.page colors
+$pp-primary: #56E3B1;
+$pp-bg-darker: #0C1010;
+$pp-bg: #101414;
+$pp-text-muted: #6D8484;
+
+$pp-grad-top: #0C1010;
+$pp-grad-bottom: #030404;
+$pp-hr: #252D2D;
+
+// Update Bulma's global variables
+//$scheme-main: $bg-black;
+
+//$family-sans-serif: "Source Sans Pro", sans-serif;
+//$grey-dark: $pp-bg-darker;
+//$grey-light: $pp-bg-darker;
+$primary: $pp-primary;
+$link: $pp-primary;
+//$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+//$body-background-color: $beige-lighter;
+$control-border-width: 4px;
+$input-border-color: transparent;
+$input-shadow: none;
 
 @import "~bulma/bulma";
+//@import "fonts";
+@import "mixins";
 
 :root {
+  --primary: #56E3B1;
   --text: #222;
-  --text-muted: #999;
-  --bg: #eee;
+  --text-muted: #6D8484;
+  --bg: #101414;
+  --bg-darker: #0C1010;
+  --hr: #252D2D;
 }
 
 html {
@@ -28,5 +54,12 @@ nav.navbar {
       height: 1.4rem;
       fill: var(--text-muted);
     }
+  }
+}
+
+.hero {
+  &.is-gradient {
+    @include gradient(#0C1010,#030404);
+    box-shadow: 0 1px #252D2D;
   }
 }
