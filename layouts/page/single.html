@@ -27,14 +27,7 @@
 {{ define "main" }}
 <div class="card">
 	<article class="card-content h-entry">
-		<header>
-			<p>
-				{{ humanize .Section | upper }}
-			</p>
-			<h1 class="title is-1 p-name">
-				{{ .Title }}
-			</h1>
-		</header>
+		{{ partial "page-header" . }}
 		<div class="e-content">
 			{{ .Content }}
 		</div>

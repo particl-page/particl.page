@@ -1,6 +1,6 @@
 ---
 title: "Articles"
-description: "Rediscover your digital privacy with Particl"
+summary: "Rediscover your digital privacy with Particl"
 menu:
   main:
     weight: 2
