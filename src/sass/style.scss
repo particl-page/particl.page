@@ -9,9 +9,24 @@ $beige-lighter: #EFF0EB;
 @import "~bulma/bulma";
 
 :root {
+  --text: #222;
+  --text-muted: #999;
   --bg: #eee;
 }
 
 html {
   background: var(--bg);
+}
+
+nav.navbar {
+  .logo {
+    max-height: 1.15rem;
+    margin-right: 0.7rem;
+  }
+  .social {
+    svg {
+      height: 1.4rem;
+      fill: var(--text-muted);
+    }
+  }
 }
