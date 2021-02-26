@@ -19,24 +19,27 @@
 {{ end }}
 
 
-{{/* define "header" }}
-{{ partial "page-header.html" . }}
-{{ end */}}
-
 
 {{ define "main" }}
-
-<article class="h-entry">
-	{{/* partial "page-header" . */}}
-	<div class="e-content">
-		{{ .Content }}
-	</div>
-</article>
-
+<main role="main" class="content column is-8"><!-- is-8 is-offset-1 -->
+	<article class="h-entry">
+		<div class="e-content">
+			{{ .Content }}
+		</div>
+	</article>
+</main>
 {{ end }}
 
 
 
 {{ define "sidebar" }}
-{{/* partial "nav/sidebar.html" . */}}
+<!--div class="side column is-3">
+	<div class="sidebar">
+
+		{{ if .Params.Author }}
+			{{ partial "about-author.html" . }}
+		{{ end }}
+
+	</div>
+</div-->
 {{ end }}

@@ -24,37 +24,38 @@
 
 {{ define "main" }}
 {{ $section := .Site.GetPage "section" .Section }}
-<article class="h-entry">
+<main role="main" class="content column is-8 is-offset-1">
+	<article class="h-entry">
 
-	{{/* partial "page-header.html" . */}}
+		{{/* partial "page-header.html" . */}}
 
-	{{ partial "toc.html" . }}
+		{{ partial "toc.html" . }}
 
-	<section class="e-content">
-		{{- .Content -}}
-	</section>
-	
-	<footer>
-		{{- partial "about-author.html" . -}}
-		{{- partial "tags.html" . -}}
-		{{- partial "categories.html" . -}}
-	</footer>
+		<section class="e-content">
+			{{- .Content -}}
+		</section>
+		
+		<footer>
+			{{- partial "about-author.html" . -}}
+			{{- partial "tags.html" . -}}
+			{{- partial "categories.html" . -}}
+		</footer>
 
-	<aside>
-		{{- partial "menu-contextual.html" . -}}
-	</aside>
-	
-	<aside>
-		{{ with .PrevInSection }}
-			<a class="previous" href="{{ .Permalink }}">{{ .Title }}</a>
-		{{ end }}
-		{{ with .NextInSection }}
-			<a class="next" href="{{ .Permalink }}">{{ .Title }}</a>
-		{{ end }}
-	</aside>
+		<aside>
+			{{- partial "menu-contextual.html" . -}}
+		</aside>
+		
+		<aside>
+			{{ with .PrevInSection }}
+				<a class="previous" href="{{ .Permalink }}">{{ .Title }}</a>
+			{{ end }}
+			{{ with .NextInSection }}
+				<a class="next" href="{{ .Permalink }}">{{ .Title }}</a>
+			{{ end }}
+		</aside>
 
-</article>
-
+	</article>
+</main>
 {{ end }}
 
 
@@ -62,48 +63,52 @@
 
 
 {{ define "sidebar" }}
+<div class="side column is-3">
+	<div class="sidebar">
 
-<h3 class="title is-5">Published</h3>
+		<h3 class="title is-5">Published</h3>
 
-<div class="card meta mb-6">
-  <div class="card-content">
+		<div class="card meta mb-6">
+			<div class="card-content">
 
-    {{ with .Date }}
-    <time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
-      {{- .Format "January 2, 2006" -}}
-    </time>
-    {{ end }}
+				{{ with .Date }}
+				<time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+					{{- .Format "January 2, 2006" -}}
+				</time>
+				{{ end }}
 
-  </div>
-</div>
-
-
-{{ if .Params.Author }}
-  {{ partial "about-author.html" . }}
-{{ end }}
+			</div>
+		</div>
 
 
-<h3 class="title is-5 mt-6">Share</h3>
+		{{ if .Params.Author }}
+			{{ partial "about-author.html" . }}
+		{{ end }}
 
-<article class="panel card">
-  <a class="panel-block">
-    <span class="panel-icon">
-      <!-- icon -->
-    </span>
-    Tweet this
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <!-- icon -->
-    </span>
-    Like this
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <!-- icon -->
-    </span>
-    Reddit this
-  </a>
-</article>
 
+		<h3 class="title is-5 mt-6">Share</h3>
+
+		<article class="panel card">
+			<a class="panel-block">
+				<span class="panel-icon">
+					<!-- icon -->
+				</span>
+				Tweet this
+			</a>
+			<a class="panel-block">
+				<span class="panel-icon">
+					<!-- icon -->
+				</span>
+				Like this
+			</a>
+			<a class="panel-block">
+				<span class="panel-icon">
+					<!-- icon -->
+				</span>
+				Reddit this
+			</a>
+		</article>
+
+	</div><!-- .sidebar -->
+</div><!-- .side -->
 {{ end }}

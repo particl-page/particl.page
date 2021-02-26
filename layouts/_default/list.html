@@ -1,21 +1,27 @@
 {{ define "main" }}
+<main role="main" class="content column"><!-- is-8 is-offset-1 -->
+	<article>
+		
+		<span>
+			{{- .Content -}}
+		</span>
+		
+		<section>
+			{{ range .Paginator.Pages }}
+			<div>
+				{{- partial "summary.html" . -}}
+			</div>
+			{{ end }}
+		</section>
 
-<article>
-	
-	<span>
-		{{- .Content -}}
-	</span>
-	
-	<section>
-		{{ range .Paginator.Pages }}
-		<div>
-			{{- partial "summary.html" . -}}
-		</div>
-		{{ end }}
-	</section>
+		{{- template "_internal/pagination.html" . -}}
 
-	{{- template "_internal/pagination.html" . -}}
+	</article>
+</main>
+{{ end }}
 
-</article>
 
+{{ define "sidebar" }}
+<!--div class="side column is-3">
+</div-->
 {{ end }}

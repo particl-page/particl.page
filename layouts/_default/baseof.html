@@ -68,14 +68,8 @@
 		<div class="container">
 			<div class="columns">
 
-				<main role="main" class="content column is-8">
-					{{/* partial "breadcrumbs.html" . */}}
-					{{ block "main" . }}{{ end }}
-				</main>
-
-				<div class="sidebar column is-3 is-offset-1">
-					{{ block "sidebar" . }}{{ end }}
-				</div>
+				{{ block "sidebar" . }}{{ end }}
+				{{ block "main" . }}{{ end }}
 
 			</div><!-- .columns -->	
 		</div><!-- .container -->
