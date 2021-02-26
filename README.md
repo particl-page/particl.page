@@ -19,9 +19,9 @@ hugo server -D
 ```
 
 
-## Notes
+## TODO
 
-- [Tachyons docs](http://tachyons.io/docs/) (in-markup styling)
+- [ ] custom fonts
 
 
 ## Shortcodes reference

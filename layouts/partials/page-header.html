@@ -1,8 +1,8 @@
-<header>
+<header class="page-header">
 
 	{{/* with .CurrentSection.Title */}}
 	{{ with .Params.Label }}
-	<p>{{ . | upper }}</p>
+	<p class="tag is-primary">{{ . | upper }}</p>
 	{{ end }}
 
 	{{ with .Params.Image }}

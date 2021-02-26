@@ -1,15 +1,13 @@
 {{ define "main" }}
 
-<div class="card">
-	<article class="card-content h-entry">
-		{{/* partial "page-header" . */}}
-		<div class="e-content">
-			{{ .Content }}
-		</div>
-		<!-- Gets populated by JSON data from Pool API -->
-		<div id="stats-container"></div>
-	</article>
-</div>
+<article class="h-entry">
+  {{/* partial "page-header" . */}}
+  <div class="e-content">
+    {{ .Content }}
+  </div>
+  <!-- Gets populated by JSON data from Pool API -->
+  <div id="stats-container"></div>
+</article>
 
 
 <script>

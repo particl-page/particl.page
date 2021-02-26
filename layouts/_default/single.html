@@ -29,36 +29,34 @@
 
 {{ define "main" }}
 {{ $section := .Site.GetPage "section" .Section }}
-<article class="card h-entry">
-	<div class="card-content">
+<article class="h-entry">
 
-		{{/* partial "page-header.html" . */}}
+	{{/* partial "page-header.html" . */}}
 
-		{{ partial "toc.html" . }}
+	{{ partial "toc.html" . }}
 
-		<section class="e-content">
-			{{- .Content -}}
-		</section>
-		
-		<footer>
-			{{- partial "about-author.html" . -}}
-			{{- partial "tags.html" . -}}
-			{{- partial "categories.html" . -}}
-		</footer>
+	<section class="e-content">
+		{{- .Content -}}
+	</section>
+	
+	<footer>
+		{{- partial "about-author.html" . -}}
+		{{- partial "tags.html" . -}}
+		{{- partial "categories.html" . -}}
+	</footer>
 
-		<aside>
-			{{- partial "menu-contextual.html" . -}}
-		</aside>
-		
-		<aside>
-			{{ with .PrevInSection }}
-				<a class="previous" href="{{ .Permalink }}">{{ .Title }}</a>
-			{{ end }}
-			{{ with .NextInSection }}
-				<a class="next" href="{{ .Permalink }}">{{ .Title }}</a>
-			{{ end }}
-		</aside>
+	<aside>
+		{{- partial "menu-contextual.html" . -}}
+	</aside>
+	
+	<aside>
+		{{ with .PrevInSection }}
+			<a class="previous" href="{{ .Permalink }}">{{ .Title }}</a>
+		{{ end }}
+		{{ with .NextInSection }}
+			<a class="next" href="{{ .Permalink }}">{{ .Title }}</a>
+		{{ end }}
+	</aside>
 
-	</div>
 </article>
 {{ end }}

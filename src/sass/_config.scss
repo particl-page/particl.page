@@ -14,11 +14,13 @@
 }
 
 $_primary: #56E3B1;
+$_primary-hover: darken($_primary, 10%);
 $_secondary: #5451E5;
 $_info: #0096E0;
 $_text: #FAFAFA;
 $_text-muted: #6D8484;
 $_text-darker: #4a5a5a;
+$_text-darkest: #3f4747;
 $_bg: #101414;
 $_bg-darker: #0C1010;
 $_bg-lighter: #151a1a;
@@ -65,14 +67,15 @@ $info: $_info;
 // $dark: $grey-darker;
 
 $link: $_primary; // links, duh
-// $link-visited: $pp-primary; // links, duh
-// $link-hover: $pp-primary; // links, duh
+$link-visited: $_secondary; // links, duh
+$link-hover: $_primary-hover; // links, duh
 // $link-focus: $pp-primary; // links, duh
 // $link-active: $pp-primary; // links, duh
 
 //$widescreen-enabled: false;
 $fullhd-enabled: false;
 
-// Update some of Bulma's component variables
-//$body-background-color: $beige-lighter;
+$tag-background-color: $_text-darkest;
+$tag-color: $_text;
 
+$card-shadow: 0 0.5em 1em -0.125em rgba($_bg-darker, 0.8), 0 0 0 1px rgba($_bg-darker, 1);

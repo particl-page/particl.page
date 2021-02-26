@@ -64,20 +64,22 @@
 	{{ end }}
 
 
-	<div class="container">
-		<div class="columns">
+	<div class="section">
+		<div class="container">
+			<div class="columns">
 
-			<main role="main" class="content column">
-				{{/* partial "breadcrumbs.html" . */}}
-				{{ block "main" . }}{{ end }}
-			</main>
+				<main role="main" class="content column">
+					{{/* partial "breadcrumbs.html" . */}}
+					{{ block "main" . }}{{ end }}
+				</main>
 
-			<div class="sidebar column is-3">
-				{{ partial "nav/sidebar.html" . }}
-			</div>
+				<div class="sidebar column is-3">
+					{{ partial "nav/sidebar.html" . }}
+				</div>
 
-		</div><!-- .columns -->	
-	</div><!-- .container -->
+			</div><!-- .columns -->	
+		</div><!-- .container -->
+	</div><!-- .section -->
 
 
 	{{ block "footer" . }}

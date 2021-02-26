@@ -35,6 +35,15 @@ nav.navbar {
   }
 }
 
+.page-header {
+  .tag {
+    margin-bottom: 0.7rem;
+    height: 1.6em;
+    padding: 0 0.5rem;
+    font-weight: 600;
+  }
+}
+
 footer.footer {
   &.is-gradient {
     @include gradient(#0C1010,#101414);
