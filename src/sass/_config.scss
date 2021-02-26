@@ -11,7 +11,8 @@
   --bg: #101414;
   --bg-darker: #0C1010;
   --bg-lighter: #151a1a;
-  --hr: #252D2D;
+  --bg-lightest: #202727; // buttons
+  --hr: #252D2D; // button-hover/focus
 }
 
 $_primary: #56E3B1;
@@ -25,6 +26,7 @@ $_text-darkest: #3f4747;
 $_bg: #101414;
 $_bg-darker: #0C1010;
 $_bg-lighter: #151a1a;
+$_bg-lightest: #202727;
 $_hr: #252D2D;
 
 // Update Bulma's global variables

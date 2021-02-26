@@ -9,6 +9,7 @@
   --bg: #101414;
   --bg-darker: #0C1010;
   --bg-lighter: #151a1a;
+  --bg-lightest: #202727;
   --hr: #252D2D; }
 
 /*! bulma.io v0.9.2 | MIT License | github.com/jgthms/bulma */
@@ -7514,6 +7515,11 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 html {
   background: var(--bg); }
 
+.button.is-dark {
+  background: var(--bg-lightest); }
+  .button.is-dark:hover, .button.is-dark:focus {
+    background: var(--hr); }
+
 nav.navbar .logo {
   max-height: 1.15rem;
   margin-right: 0.7rem; }
@@ -7562,6 +7568,14 @@ nav.navbar .social svg {
       color: var(--text);
       text-overflow: ellipsis;
       overflow: hidden; }
+  .sidebar .sharing-buttons .button {
+    color: var(--text-muted); }
+    .sidebar .sharing-buttons .button:hover.twitter svg, .sidebar .sharing-buttons .button:focus.twitter svg {
+      fill: var(--info); }
+    .sidebar .sharing-buttons .button:hover.telegram svg, .sidebar .sharing-buttons .button:focus.telegram svg {
+      fill: var(--info); }
+    .sidebar .sharing-buttons .button:hover.facebook svg, .sidebar .sharing-buttons .button:focus.facebook svg {
+      fill: var(--info); }
 
 footer.footer.is-dark {
   background: #0C1010;
