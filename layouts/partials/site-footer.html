@@ -1,8 +1,34 @@
 <footer class="footer is-dark is-gradient" role="contentinfo">
 	<div class="container">
-		<a href="{{ .Site.BaseURL }}">
-			&copy; {{ with .Site.Params.copyrightSince }}{{ . }}&ndash;{{ end }}{{ now.Format "2006" }} {{ .Site.Title }}
-		</a>
-		<div>{{ partial "social-follow.html" . }}</div>
-	</div>
+		<div class="columns">
+
+			<div class="column is-half">
+
+				<div class="logotype">
+					<span class="site-name">Particl</span>
+					<span class="green dot">∘</span>
+					<span class="domain">page</span>
+					<span class="version">3.0</span>
+				</div>
+
+				<p class="site-desc">
+					Community-run site around privacy-focused crypto <a href="https://particl.io">Particl Project</a>
+				</p>
+
+				<p class="copyright">
+					&copy; {{ with .Site.Params.copyrightSince }}{{ . }}&ndash;{{ end }}{{ now.Format "2006" }} Particl.page Contributors
+				</p>
+
+			</div><!-- .column -->
+
+			<div class="column">
+				{{ partial "social-follow.html" . }}
+			</div>
+
+			<div class="column">
+				xxx
+			</div>
+
+		</div><!-- .columns -->
+	</div><!-- .container -->
 </footer>

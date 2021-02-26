@@ -1,68 +1,6 @@
 @charset "utf-8";
 
-:root {
-  --primary: #56E3B1;
-  --secondary: #5451E5;
-  --info: #0096E0;
-  --text: #FAFAFA;
-  --text-muted: #6D8484;
-  --text-darker: #4a5a5a;
-  --bg: #101414;
-  --bg-darker: #0C1010;
-  --bg-lighter: #151a1a;
-  --hr: #252D2D;
-}
-
-$_primary: #56E3B1;
-$_secondary: #5451E5;
-$_info: #0096E0;
-$_text: #FAFAFA;
-$_text-muted: #6D8484;
-$_text-darker: #4a5a5a;
-$_bg: #101414;
-$_bg-darker: #0C1010;
-$_bg-lighter: #151a1a;
-$_hr: #252D2D;
-
-// Update Bulma's global variables
-$scheme-main: $_bg-lighter; // main foreground color (cards)
-$scheme-main-bis: $_bg-darker; // slightly darker fg (footer)
-$scheme-main-ter: $_bg-darker; // darker fg
-//$scheme-invert: $white; // opposite to fg
-//$scheme-invert-bis: $white; // slightly lighter opposite to fg
-//$scheme-invert-ter: $white; // lighter opposite to fg
-
-$text-strong: $_text; // brighter text color
-$text: $_text-muted; // text color
-$text-light: $_text-darker; // muted text color
-
-//$family-sans-serif: "Source Sans Pro", sans-serif;
-//$family-primary: $font-sans-serif;
-
-//$grey-dark: $pp-bg-darker;
-//$grey-light: $pp-bg-darker;
-
-$primary: $_primary; // primary color
-$info: $_info;
-// $success: $green;
-// $warning: $yellow;
-// $danger: $red;
-// $light: $white-ter;
-// $dark: $grey-darker;
-
-$link: $_primary; // links, duh
-// $link-visited: $pp-primary; // links, duh
-// $link-hover: $pp-primary; // links, duh
-// $link-focus: $pp-primary; // links, duh
-// $link-active: $pp-primary; // links, duh
-
-//$widescreen-enabled: false;
-$fullhd-enabled: false;
-
-// Update some of Bulma's component variables
-//$body-background-color: $beige-lighter;
-
-
+@import "config";
 @import "~bulma/bulma";
 //@import "fonts";
 @import "mixins";

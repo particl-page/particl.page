@@ -1,6 +1,7 @@
 ---
+label: Tutorial / Pool
 date: 2018-11-30T18:45:00-04:00
-title: "Pool: How to Stake"
+title: "How to Stake"
 #featured_image: "/images/howto/check-pool-stats/pool-address-stats.png"
 #omit_header_text: true
 summary: "How to setup staking on your Particl Desktop or Core (Qt)"

@@ -1,8 +1,9 @@
 <header>
 
-	{{/* with .CurrentSection.Title }}
+	{{/* with .CurrentSection.Title */}}
+	{{ with .Params.Label }}
 	<p>{{ . | upper }}</p>
-	{{ end */}}
+	{{ end }}
 
 	{{ with .Params.Image }}
 	<div class="featured-image">

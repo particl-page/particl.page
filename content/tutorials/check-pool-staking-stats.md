@@ -1,6 +1,7 @@
 ---
+label: Tutorial / Pool
 date: 2020-04-24T16:13:00-04:00
-title: "Pool: Check your staking stats"
+title: "Check your staking stats"
 featured_image: "/images/howto/check-pool-stats/pool-address-stats.png"
 omit_header_text: true
 summary: "Access overview of your staking progress and stats on pool.particl.page"
