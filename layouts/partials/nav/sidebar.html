@@ -1,38 +1,42 @@
-<!--nav class="panel mt-6 is-dark">
-  <p class="panel-heading">
-    Search
-  </p>
-  <div class="panel-block is-white">
-    <p class="control has-icons-left">
-      <input class="input" type="text" placeholder="Search">
-      <span class="icon is-left">
-        <i class="fas fa-search" aria-hidden="true"></i>
-      </span>
-    </p>
+<h3 class="title is-5">Published</h3>
+
+<div class="card meta mb-6">
+  <div class="card-content">
+
+    {{ with .Date }}
+    <time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+      {{- .Format "January 2, 2006" -}}
+    </time>
+    {{ end }}
+
   </div>
-</nav>
+</div>
 
 
-<nav class="panel my-3 is-dark">
-  <p class="panel-heading">
-    Projects
-  </p>
-  <a class="panel-block is-a is-whitective">
+{{ if .Params.Author }}
+  {{ partial "about-author.html" . }}
+{{ end }}
+
+
+<h3 class="title is-5 mt-6">Share</h3>
+
+<article class="panel card">
+  <a class="panel-block">
     <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
+      <!-- icon -->
     </span>
-    bulma
+    Tweet this
   </a>
   <a class="panel-block">
     <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
+      <!-- icon -->
     </span>
-    marksheet
+    Like this
   </a>
   <a class="panel-block">
     <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
+      <!-- icon -->
     </span>
-    minireset.css
+    Reddit this
   </a>
-</nav-->
+</article>

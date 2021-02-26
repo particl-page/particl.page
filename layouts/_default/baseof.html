@@ -68,13 +68,13 @@
 		<div class="container">
 			<div class="columns">
 
-				<main role="main" class="content column">
+				<main role="main" class="content column is-8">
 					{{/* partial "breadcrumbs.html" . */}}
 					{{ block "main" . }}{{ end }}
 				</main>
 
-				<div class="sidebar column is-3">
-					{{ partial "nav/sidebar.html" . }}
+				<div class="sidebar column is-3 is-offset-1">
+					{{ block "sidebar" . }}{{ end }}
 				</div>
 
 			</div><!-- .columns -->	
@@ -89,19 +89,6 @@
 	{{ block "scripts" . }}
 	{{ partial "site-scripts.html" . }}
 	{{ end }}
-
-	<!-- Show responsive helper only for development -->
-	{{/* if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
-	{{ else }}
-	<div class="debug-responsivity" aria-hidden="true">
-		<div class="size xs">XS</div>
-		<div class="size s">S</div>
-		<div class="size m">M</div>
-		<div class="size t">T</div>
-		<div class="size l">L</div>
-		<div class="size xl">XL</div>
-	</div>
-	{{ end */}}
 
 </body>
 </html>

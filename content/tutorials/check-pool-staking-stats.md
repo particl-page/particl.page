@@ -5,7 +5,7 @@ title: "Check your staking stats"
 featured_image: "/images/howto/check-pool-stats/pool-address-stats.png"
 omit_header_text: true
 summary: "Access overview of your staking progress and stats on pool.particl.page"
-type: "page"
+#type: "page"
 author: "xe-non"
 aliases:
   - "/howto/check-pool-staking-stats"

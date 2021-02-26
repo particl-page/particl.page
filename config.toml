@@ -16,7 +16,7 @@ enableGitInfo = false
 [params]
   # SEO & Open:graph meta
   siteDescription = "Community-run site around privacy-focused crypto Particl Project"
-  siteImage = "images/open-graph-img.png" # 1200 × 630 px image in /static folder
+  siteImage = "images/particl_basics-poster.jpg" # 1200 × 630 px image in /static folder
 
   # displays in footer's copyright (until this year)
   copyrightSince = 2018
@@ -30,7 +30,7 @@ enableGitInfo = false
   github = "https://github.com/particl-page"
   gitlab = ""
   linkedin = ""
-  mastodon = ""
+  mastodon = "https://mstdn.social/@particl_page"
   slack = ""
   stackoverflow = ""
 

@@ -3,7 +3,7 @@ date: 2020-04-08T10:58:08-04:00
 title: "Particl Basics #1: The privacy coin"
 slug: "particl-basics-01-privacy-coin"
 summary: "Welcome to our new series of bite-sized “get to know Particl” articles! Let’s at the core of the whole platform — the PART coin."
-featured_image: "/images/particl-basics/01-coin/header-compressor.jpg"
+featured_image: "header-compressor.jpg"
 category: "articles"
 tags: ["PART coin"]
 series: ["Particl Basics"]
@@ -26,7 +26,7 @@ Particl's code was forked from Bitcoin back in 2017 and like BTC, the default PA
 
 On the other hand, Public PART coins can stake and bring you _at least 2%_ in staking rewards per year. We will get into staking more in-depth in following articles.
 
-![Public PART coin](/images/particl-basics/01-coin/particl-coin-public.png)
+![Public PART coin](particl-coin-public.png)
 
 - basic, cheap payments
 - accepted anywhere where PART is supported
@@ -38,7 +38,7 @@ On the other hand, Public PART coins can stake and bring you _at least 2%_ in st
 
 **Blind** Particl coins are a significant step-up for privacy. Based on the work of Elements Project[^2] (and Bitcoin Core developer Gregory Maxwell), Blind PART hides transaction amounts from any third parties, that aren't involved in the transaction. Any observer can still see who sent coins to whom, but can't see how much.
 
-![Blind PART coin](/images/particl-basics/01-coin/particl-coin-blind.png)
+![Blind PART coin](particl-coin-blind.png)
 
 - increased privacy with hidden amounts
 - reasonable transaction costs
@@ -53,7 +53,7 @@ You've surely heard about Monero (XMR) before. Built on CryptoNote protocol, XMR
 
 **Particl was the first coin to bring these privacy improvements on Bitcoin codebase.** In combination with Confidential Transactions (CT), resulting Anonymous PART transactions hide not only the amounts transferred, but also all participants. Observers can see _some_ transaction, but links to its participants are broken. And that's just the way to take care of your financial activities.
 
-![Anonymous PART coin](/images/particl-basics/01-coin/particl-coin-anon.png)
+![Anonymous PART coin](particl-coin-anon.png)
 
 Still not convinced this is a big deal? Both Blind (CT) and Anonymous (RingCT) transactions support **smart contracts**. One of the most practical examples of this is implementation of MAD Escrow[^4] mechanism in Particl Open Marketplace. That, again, is a big topic for a future article, so keep an eye for that.
 

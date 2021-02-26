@@ -28,6 +28,8 @@ nav.navbar {
     box-shadow: 0 1px var(--hr);
     .subtitle {
       color: var(--text-muted);
+      max-width: 40rem;
+      line-height: 1.5;
     }
     .meta {
       color: var(--text-darker);
@@ -41,6 +43,13 @@ nav.navbar {
     height: 1.6em;
     padding: 0 0.5rem;
     font-weight: 600;
+  }
+}
+
+.content {
+  blockquote {
+    background: var(--bg-lighter);
+    border-color: var(--text-darkest);
   }
 }
 

@@ -1,33 +1,32 @@
-<h3>About Author</h3>
+<h3 class="title is-5">About Author</h3>
 
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
 {{ range where $data.authors "name" "==" .Params.Author }}
 
-  <div class="h-card">
+  <div class="card h-card">
+    <div class="card-content">
+      <div class="media">
 
-    {{ with .photo }}
-    <img class="u-photo" src="{{ . }}">
-    {{ end }}
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img src="{{ .photo }}" class="u-photo" alt="{{ .name }}">
+          </figure>
+        </div>
 
-    <h4 class="p-name">{{ .name }}</h4>
+        <div class="media-content">
+          <p class="title is-4 p-name">{{ .name }}</p>
+          {{ with .twitter_username }}<p class="subtitle is-6"><a class="u-url" href="https://twitter.com/{{ . }}">@{{ . }}</a></p>{{ end }}
+        </div>
+      </div>
+  
+      {{ with .bio }}
+      <div class="content p-note">
+        {{ . }}
+      </div>
+      {{ end }}
 
-    {{ with .bio }}
-    <p class="p-note">{{ . }}</p>
-    {{ end }}
-
-    {{ with .homepage }}
-    <a class="u-url" href="{{ . }}">{{ . }}</a>
-    {{ end }}
-    
-    {{ with .email }}
-    <a class="u-email" href="mailto:{{ . }}">{{ . }}</a>
-    {{ end }}
-
-    {{ with .twitter_username }}
-    <a class="u-url" rel="me" href="https://twitter.com/{{ . }}">@{{ . }}</a>
-    {{ end }}
-
+    </div>
   </div>
 
 {{ end }}
