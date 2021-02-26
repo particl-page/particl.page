@@ -14,7 +14,7 @@
 }
 
 $_primary: #56E3B1;
-$_primary-hover: darken($_primary, 10%);
+$_primary-hover: darken($_primary, 15%);
 $_secondary: #5451E5;
 $_info: #0096E0;
 $_text: #FAFAFA;
@@ -77,5 +77,10 @@ $fullhd-enabled: false;
 
 $tag-background-color: $_text-darkest;
 $tag-color: $_text;
+
+$code: $_primary;
+$code-background: rgba($_primary, 0.1);
+//$pre: ;
+$pre-background: $_bg-lighter;
 
 $card-shadow: 0 0.5em 1em -0.125em rgba($_bg-darker, 0.8), 0 0 0 1px rgba($_bg-darker, 1);

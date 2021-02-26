@@ -1,8 +1,8 @@
-<footer class="footer is-dark is-gradient" role="contentinfo">
+<footer class="footer is-dark" role="contentinfo">
 	<div class="container">
-		<div class="columns">
+		<div class="columns is-mobile is-multiline">
 
-			<div class="column is-half">
+			<div class="column is-full-mobile is-half-tablet">
 
 				<div class="logotype">
 					<span class="site-name">Particl</span>
@@ -15,18 +15,40 @@
 					Community-run site around privacy-focused crypto <a href="https://particl.io">Particl Project</a>
 				</p>
 
-				<p class="copyright">
+				<small class="copyright">
 					&copy; {{ with .Site.Params.copyrightSince }}{{ . }}&ndash;{{ end }}{{ now.Format "2006" }} Particl.page Contributors
-				</p>
+				</small>
+
+				<div class="social">
+					{{ partial "social-follow.html" . }}
+				</div>
 
 			</div><!-- .column -->
 
-			<div class="column">
-				{{ partial "social-follow.html" . }}
+			<div class="links projects column is-half-mobile">
+				<div class="title is-6">Our Projects</div>
+				<ul>
+					<li><a href="https://stats.particl.page">Particl Stats</a></li>
+					<li><a href="https://pool.particl.page">Staking Pool</a></li>
+				</ul>
 			</div>
 
-			<div class="column">
-				xxx
+			<div class="links official column is-half-mobile">
+				<div class="title is-6">Particl links</div>
+				<ul>
+					<li><a href="https://particl.io">Official website</a></li>
+					<li><a href="https://particl.wiki">Project Wiki</a></li>
+					<li><a href="https://ccs.particl.io">Crowdfunding</a></li>
+				</ul>
+			</div>
+
+			<div class="links other column is-half-mobile">
+				<div class="title is-6">Our Friends</div>
+				<ul>
+					<li><a href="https://demarkets.io">Demarkets.io</a></li>
+					<li><a href="https://localparticl.com">LocalParticl.com</a></li>
+					<li><a href="https://wizardswap.io">WizardSwap.io</a></li>
+				</ul>
 			</div>
 
 		</div><!-- .columns -->

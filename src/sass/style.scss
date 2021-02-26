@@ -44,10 +44,41 @@ nav.navbar {
   }
 }
 
-footer.footer {
-  &.is-gradient {
-    @include gradient(#0C1010,#101414);
-    box-shadow: 0 -1px var(--hr);
+footer.footer.is-dark {
+  @include gradient(#0C1010,#101414);
+  padding: 5rem 1.5rem 8rem;
+  box-shadow: 0 -1px var(--hr);
+  .title {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+  }
+  a {
+    color: var(--text-muted);
+    &:hover, &:focus {
+      color: var(--primary);
+    }
+  }
+  .links {
+    a {
+      display: inline-block;
+      margin-bottom: 0.1rem;
+    }
+  }
+  .social {
+    margin: 1rem 0;
+    a {
+      svg {
+        fill: var(--text-muted);
+        height: 1.35rem;
+        width: auto;
+        margin-right: 0.5rem;
+      }
+      &:hover, &:focus {
+        svg { fill: var(--primary); }
+      }
+    }
   }
 }
 
