@@ -1,4 +1,5 @@
 ---
+label: "Particl.page"
 title: "Staking Pool"
 summary: "Particl Cold Staking pool with low fees and fair reward distribution "
 #featured_image: "/images/particl-basics/particl_basics-poster.jpg"

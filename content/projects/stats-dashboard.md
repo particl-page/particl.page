@@ -4,10 +4,16 @@ featured_image: "/images/projects/stats.png"
 omit_header_text: true
 summary: Tracking Particl stats in style, all-in-one
 type: page
-#author: "xe-non"
+author: "xe-non"
 #menu: main
+layout: "project"
 aliases:
   - "/project/stats-dashboard"
+project:
+  url: "https://stats.particl.page"
+  repo: ""
+  cat: "Data dashboard"
+  development: "Private"
 ---
 
 > Tracking Particl stats in style, all-in-one
