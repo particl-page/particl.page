@@ -1,12 +1,45 @@
 {{ define "main" }}
 <main role="main" class="content column"><!-- is-8 is-offset-1 -->
   <article class="h-entry">
-    {{/* partial "page-header" . */}}
+    
+    <div class="columns">
+      <div class="column">
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>Blocks found</p>
+          </div>
+          <div class="message-body" id="blocksfound">Loading..</div>
+        </article>
+      </div>
+      <div class="column">
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>Total Coins Pooled</p>
+          </div>
+          <div class="message-body" id="watchonlytotalbalance">Loading..</div>
+        </article>
+      </div>
+      <div class="column">
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>Currently Staking</p>
+          </div>
+          <div class="message-body" id="stakeweight">Loading..</div>
+        </article>
+      </div>
+      <div class="column">
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>Pool Height</p>
+          </div>
+          <div class="message-body" id="poolheight">Loading..</div>
+        </article>
+      </div>
+    </div>
+
     <div class="e-content">
       {{ .Content }}
     </div>
-    <!-- Gets populated by JSON data from Pool API -->
-    <div id="stats-container"></div>
   </article>
 </main>
 
@@ -28,16 +61,13 @@
 	
 
 	function appendData(data) {
-		// fetch HTML placeholder for data
-		var mainContainer = document.getElementById("stats-container");
-		// Loop through JSON object
-		//for (var i = 0; i < data.length; i++) {
-			// Add DIV for each and insert data
-			var div = document.createElement("div");
-			div.innerHTML = 'Pool height: ' + data.poolheight;
-			// Append all that to our main container
-			mainContainer.appendChild(div);
-		//}
+    document.getElementById("blocksfound").innerHTML = data.blocksfound;
+    document.getElementById("watchonlytotalbalance").innerHTML = data.watchonlytotalbalance;
+
+    var stakeweight = data.stakeweight / 100000000;
+    document.getElementById("stakeweight").innerHTML = stakeweight;
+
+    document.getElementById("poolheight").innerHTML = data.poolheight;
 	}
 </script>
 
