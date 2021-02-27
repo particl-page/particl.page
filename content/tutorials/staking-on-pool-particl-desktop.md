@@ -5,7 +5,7 @@ title: "Staking with Particl Desktop"
 #featured_image: "/images/howto/check-pool-stats/pool-address-stats.png"
 #omit_header_text: true
 summary: "Staking setup walkthrough with Particl Desktop"
-type: "page"
+#type: "page"
 author: "xe-non"
 aliases:
   - "/howto/staking-on-pool-particl-desktop"

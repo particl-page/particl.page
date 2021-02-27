@@ -7549,21 +7549,32 @@ nav.navbar .social svg {
   background: var(--bg-lighter);
   border-color: var(--text-darkest); }
 
+article.pool .pool-address {
+  text-align: center;
+  background: rgba(86, 227, 177, 0.1);
+  font-family: monospace;
+  font-size: 1.1em;
+  color: var(--primary);
+  -webkit-user-select: all;
+     -moz-user-select: all;
+      -ms-user-select: all;
+          user-select: all; }
+
 .sidebar {
   position: -webkit-sticky;
   position: sticky;
   top: 3rem; }
-  .sidebar .project-info {
+  .sidebar .icon-list {
     overflow: hidden; }
-    .sidebar .project-info dt {
+    .sidebar .icon-list dt {
       text-transform: uppercase;
       font-size: 0.85rem; }
-    .sidebar .project-info svg {
+    .sidebar .icon-list svg {
       height: 20px;
       position: relative;
-      top: 3px;
+      top: 5px;
       margin-right: 0.2rem; }
-    .sidebar .project-info dd {
+    .sidebar .icon-list dd {
       padding: 0.1rem 0 1rem 1.7rem;
       color: var(--text);
       text-overflow: ellipsis;

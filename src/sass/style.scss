@@ -60,12 +60,26 @@ nav.navbar {
   }
 }
 
+article {
+  // Pool page
+  &.pool {
+    .pool-address {
+      text-align: center;
+      background: rgba(86, 227, 177, 0.1);
+      font-family: monospace;
+      font-size: 1.1em;
+      color: var(--primary);
+      user-select: all;
+    }
+  }
+}
+
 .sidebar {
   position: sticky;
   top: 3rem;
 
-  // Projects
-  .project-info {
+  // Projects, Pool
+  .icon-list {
     overflow: hidden;
     dt {
       text-transform: uppercase;
@@ -74,7 +88,7 @@ nav.navbar {
     svg {
       height: 20px;
       position: relative;
-      top: 3px;
+      top: 5px;
       margin-right: 0.2rem;
     }
     dd {

@@ -5,7 +5,7 @@ title: "Staking with Particl Core"
 #featured_image: "/images/howto/check-pool-stats/pool-address-stats.png"
 #omit_header_text: true
 summary: "Staking setup walkthrough with Particl Core (Qt)"
-type: "page"
+#type: "page"
 author: "xe-non"
 aliases:
   - "/howto/staking-on-pool-particl-core-qt"

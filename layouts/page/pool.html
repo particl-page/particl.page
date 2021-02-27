@@ -1,41 +1,67 @@
+{{ define "sidebar" }}
+<div class="side column is-4">
+	<div class="sidebar">
+
+		<h2 class="title is-5">Pool Stats</h2>
+
+		<div class="card meta mb-6">
+			<div class="card-content">
+
+				<dl class="icon-list pool-info">
+          <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+            </svg>
+            Blocks found
+          </dt>
+          <dd id="blocksfound">Loading..</dd>
+          <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
+              <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
+            </svg>
+            Total Coins Pooled
+          </dt>
+          <dd id="watchonlytotalbalance">Loading..</dd>
+          <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
+              <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
+              <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
+            </svg>
+            Currently Staking
+          </dt>
+          <dd id="stakeweight">Loading..</dd>
+          <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414 0zm0-6a1 1 0 010-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L10 5.414 5.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+            Pool Height
+          </dt>
+          <dd id="poolheight">Loading..</dd>
+        </dl>
+
+			</div>
+		</div>
+
+	</div><!-- .sidebar -->
+</div><!-- .side -->
+{{ end }}
+
+
 {{ define "main" }}
-<main role="main" class="content column"><!-- is-8 is-offset-1 -->
-  <article class="h-entry">
-    
-    <div class="columns">
-      <div class="column">
-        <article class="message is-dark">
-          <div class="message-header">
-            <p>Blocks found</p>
-          </div>
-          <div class="message-body" id="blocksfound">Loading..</div>
-        </article>
-      </div>
-      <div class="column">
-        <article class="message is-dark">
-          <div class="message-header">
-            <p>Total Coins Pooled</p>
-          </div>
-          <div class="message-body" id="watchonlytotalbalance">Loading..</div>
-        </article>
-      </div>
-      <div class="column">
-        <article class="message is-dark">
-          <div class="message-header">
-            <p>Currently Staking</p>
-          </div>
-          <div class="message-body" id="stakeweight">Loading..</div>
-        </article>
-      </div>
-      <div class="column">
-        <article class="message is-dark">
-          <div class="message-header">
-            <p>Pool Height</p>
-          </div>
-          <div class="message-body" id="poolheight">Loading..</div>
-        </article>
+<main role="main" class="content column is-7 is-offset-1">
+  <article class="pool h-entry">
+
+    <h2 class="title is-5">Pool Address</h2>
+
+    <div class="card pool-address mb-6">
+      <div class="card-content">
+        pcs1vzuadmp42slqapdm8eevm6g8ntm3hlvgptmyjy
       </div>
     </div>
+
+    <h2 class="title is-5">More Info</h2>
 
     <div class="e-content">
       {{ .Content }}

@@ -23,6 +23,9 @@ hugo server -D
 
 - [ ] custom fonts
 
+after launch:
+- [ ] check social sharing buttons
+
 
 ## Shortcodes reference
 
