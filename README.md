@@ -22,6 +22,7 @@ hugo server -D
 ## TODO
 
 - [ ] custom fonts
+- [ ] 404
 
 after launch:
 - [ ] check social sharing buttons

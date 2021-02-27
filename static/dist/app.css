@@ -7545,9 +7545,27 @@ nav.navbar .social svg {
   padding: 0 0.5rem;
   font-weight: 600; }
 
+.content h2:not(:first-child), .content h3:not(:first-child), .content h4:not(:first-child) {
+  margin-top: 2.143em; }
+
 .content blockquote {
   background: var(--bg-lighter);
   border-color: var(--text-darkest); }
+
+.content figure {
+  margin: 2em 0;
+  background: var(--bg-lighter);
+  border-radius: 5px;
+  overflow: hidden; }
+  .content figure img {
+    display: block;
+    padding: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px; }
+  .content figure p {
+    color: var(--text);
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem; }
 
 article.pool .pool-address {
   text-align: center;
