@@ -20,10 +20,22 @@
         </div>
       </div>
   
-      {{ with .bio }}
       <div class="content p-note">
-        {{ . }}
+        {{ .bio }}
       </div>
+
+      {{ if or (isset . "part_address") (isset . "btc_address") }}
+      <div class="addresses">
+
+        {{ with .part_address }}
+        <a class="button is-small is-primary is-outlined" href="https://explorer.particl.io/address/{{ . }}" target="_blank" rel="noopener">Tip PART</a>
+        {{ end }}
+
+        {{ with .btc_address }}
+        <a class="button is-small is-warning is-outlined" href="https://blockchair.com/bitcoin/address/{{ . }}" target="_blank" rel="noopener">Tip BTC</a>
+        {{ end }}
+
+      </div><!-- .addresses -->
       {{ end }}
 
     </div>

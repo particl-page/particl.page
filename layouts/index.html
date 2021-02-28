@@ -1,10 +1,10 @@
 {{ define "main" }}
-<main role="main" class="content column is-8">
+<main role="main" class="main-content column is-7 is-offset-1">
 
 	{{/* "Type" "in" "<section name AKA folder in /content/>" */}}
 	{{ $articles	:= where .Site.RegularPages "Type" "in" "articles" }}
 	{{ $tutorials := where .Site.RegularPages "Type" "in" "tutorials" }}
-	{{ $projects 	:= where .Site.RegularPages "Type" "in" "projects" }}
+	{{ $projects 	:= where .Site.RegularPages "Type" "in" "ecosystem" }}
 
 
 	<article class="h-entry">
@@ -15,62 +15,61 @@
 			</div>
 		{{ end }}
 
-		<section class="e-content">
+		<!--section class="e-content">
 			{{- .Content -}}
-		</section>
+		</section-->
 
 	</article>
 
 
 	<section class="article-list mt-6">
 		<header>
-			<h2>Latest articles</h2>
+			<h2 class="title is-3">Latest articles</h2>
 		</header>
 
-		{{ range first 5 $articles }}
+		{{ range first 3 $articles }}
 		{{- partial "summary.html" . -}}
 		{{ end }}
 
 		<footer>
-			{{ with .Site.GetPage "section" "post" }}
-			<a href="{{ .Permalink }}">{{ T "all-articles" }} &rarr;</a>
+			{{ with .Site.GetPage "section" "articles" }}
+			<a href="{{ .Permalink }}" class="button is-dark">All articles &rarr;</a>
 			{{ end }}
 		</footer>
 	</section><!-- .article-list -->
 
 
-	<section class="tutorials-list mt-6">
-		<header>
-			<h2>Latest tutorials</h2>
-		</header>
-
-		{{ range first 5 $tutorials }}
-		{{- partial "summary.html" . -}}
-		{{ end }}
-
-		<footer>
-			{{ with .Site.GetPage "section" "tutorial" }}
-			<a href="{{ .Permalink }}">{{ T "all-tutorials" }} &rarr;</a>
-			{{ end }}
-		</footer>
-	</section><!-- .projects-list -->
-
-
 	<section class="projects-list mt-6">
 		<header>
-			<h2>Latest projects</h2>
+			<h2 class="title is-3">Community projects</h2>
 		</header>
 
-		{{ range first 5 $projects }}
+		{{ range first 3 $projects }}
 		{{- partial "summary.html" . -}}
 		{{ end }}
 
 		<footer>
-			{{ with .Site.GetPage "section" "project" }}
-			<a href="{{ .Permalink }}">{{ T "all-projects" }} &rarr;</a>
+			{{ with .Site.GetPage "section" "ecosystem" }}
+			<a href="{{ .Permalink }}" class="button is-dark">All community projects &rarr;</a>
 			{{ end }}
 		</footer>
 	</section><!-- .projects-list -->
 
 </main>
+{{ end }}
+
+
+
+
+{{ define "sidebar" }}
+<div class="side column is-4">
+	<div class="sidebar">
+		
+		<section class="e-content">
+			{{- .Content -}}
+			<a href="/about" class="button is-dark">About Particl.page</a>
+		</section>
+
+	</div>
+</div>
 {{ end }}

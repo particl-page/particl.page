@@ -115,6 +115,8 @@ article {
     dt {
       text-transform: uppercase;
       font-size: 0.85rem;
+      margin-top: 1rem;
+      &:first-child { margin-top: 0; }
     }
     svg {
       height: 20px;
@@ -123,32 +125,33 @@ article {
       margin-right: 0.2rem;
     }
     dd {
-      padding: 0.1rem 0 1rem 1.7rem;
+      padding: 0.1rem 0 0 1.7rem;
       color: var(--text);
       text-overflow: ellipsis;
       overflow: hidden;
     }
   }
 
-  // Sharing
-  .sharing-buttons {
-    .button {
-      color: var(--text-muted);
-      &:hover, &:focus {
-        &.twitter {
-          svg { fill: var(--info); }
-        }
-        &.telegram {
-          svg { fill: var(--info); }
-        }
-        &.facebook {
-          svg { fill: var(--info); }
-        }
+} // .sidebar
+
+
+// Sharing
+.sharing-buttons {
+  .button {
+    color: var(--text-muted);
+    &:hover, &:focus {
+      &.twitter {
+        svg { fill: var(--info); }
+      }
+      &.telegram {
+        svg { fill: var(--info); }
+      }
+      &.facebook {
+        svg { fill: var(--info); }
       }
     }
   }
-
-} // .sidebar
+}
 
 
 // Site footer

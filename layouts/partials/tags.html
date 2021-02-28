@@ -1,10 +1,9 @@
-Tags:
-<ul>
-	{{ range .Params.tags }}
-	<li>
-		<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="p-category">
-			{{- . -}}
-		</a>
-	</li>
-	{{ end }}
-</ul>
+<dt>Tags</dt>
+
+{{ range .Params.tags }}
+<dd>
+	<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="p-category">
+		{{- . -}}
+	</a>
+</dd>
+{{ end }}

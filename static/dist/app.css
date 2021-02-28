@@ -7596,25 +7596,29 @@ article.pool .pool-address {
     overflow: hidden; }
     .sidebar .icon-list dt {
       text-transform: uppercase;
-      font-size: 0.85rem; }
+      font-size: 0.85rem;
+      margin-top: 1rem; }
+      .sidebar .icon-list dt:first-child {
+        margin-top: 0; }
     .sidebar .icon-list svg {
       height: 20px;
       position: relative;
       top: 5px;
       margin-right: 0.2rem; }
     .sidebar .icon-list dd {
-      padding: 0.1rem 0 1rem 1.7rem;
+      padding: 0.1rem 0 0 1.7rem;
       color: var(--text);
       text-overflow: ellipsis;
       overflow: hidden; }
-  .sidebar .sharing-buttons .button {
-    color: var(--text-muted); }
-    .sidebar .sharing-buttons .button:hover.twitter svg, .sidebar .sharing-buttons .button:focus.twitter svg {
-      fill: var(--info); }
-    .sidebar .sharing-buttons .button:hover.telegram svg, .sidebar .sharing-buttons .button:focus.telegram svg {
-      fill: var(--info); }
-    .sidebar .sharing-buttons .button:hover.facebook svg, .sidebar .sharing-buttons .button:focus.facebook svg {
-      fill: var(--info); }
+
+.sharing-buttons .button {
+  color: var(--text-muted); }
+  .sharing-buttons .button:hover.twitter svg, .sharing-buttons .button:focus.twitter svg {
+    fill: var(--info); }
+  .sharing-buttons .button:hover.telegram svg, .sharing-buttons .button:focus.telegram svg {
+    fill: var(--info); }
+  .sharing-buttons .button:hover.facebook svg, .sharing-buttons .button:focus.facebook svg {
+    fill: var(--info); }
 
 footer.footer.is-dark {
   background: #0C1010;
