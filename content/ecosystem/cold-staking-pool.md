@@ -3,7 +3,7 @@ title: Cold Staking Pool
 featured_image: "/images/projects/pool.png"
 omit_header_text: true
 summary: Particl Staking pool with low fees and fair reward distribution
-type: page
+#type: page
 #menu: main
 layout: "project"
 aliases:

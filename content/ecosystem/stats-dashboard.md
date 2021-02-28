@@ -3,13 +3,13 @@ title: Stats Dashboard
 featured_image: "/images/projects/stats.png"
 omit_header_text: true
 summary: Tracking Particl stats in style, all-in-one
-type: page
-author: "xe-non"
+#type: page
 #menu: main
 layout: "project"
 aliases:
   - "/project/stats-dashboard"
 project:
+  author: "xe-non"
   url: "https://stats.particl.page"
   repo: ""
   cat: "Data dashboard"

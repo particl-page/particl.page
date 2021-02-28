@@ -1,75 +1,76 @@
 {{ define "main" }}
+<main role="main" class="content column is-8">
 
-{{/* "Type" "in" "<section name AKA folder in /content/>" */}}
-{{ $articles	:= where .Site.RegularPages "Type" "in" "articles" }}
-{{ $tutorials := where .Site.RegularPages "Type" "in" "tutorials" }}
-{{ $projects 	:= where .Site.RegularPages "Type" "in" "projects" }}
-
-
-<article class="h-entry">
-
-	{{ with .Params.Image }}
-		<div class="featured-image">
-			<img src="{{ . }}">
-		</div>
-	{{ end }}
-
-	<section class="e-content">
-		{{- .Content -}}
-	</section>
-
-</article>
+	{{/* "Type" "in" "<section name AKA folder in /content/>" */}}
+	{{ $articles	:= where .Site.RegularPages "Type" "in" "articles" }}
+	{{ $tutorials := where .Site.RegularPages "Type" "in" "tutorials" }}
+	{{ $projects 	:= where .Site.RegularPages "Type" "in" "projects" }}
 
 
-<section class="article-list mt-6">
-	<header>
-		<h2>Latest articles</h2>
-	</header>
+	<article class="h-entry">
 
-	{{ range first 5 $articles }}
-	{{- partial "summary.html" . -}}
-	{{ end }}
-
-	<footer>
-		{{ with .Site.GetPage "section" "post" }}
-		<a href="{{ .Permalink }}">{{ T "all-articles" }} &rarr;</a>
+		{{ with .Params.Image }}
+			<div class="featured-image">
+				<img src="{{ . }}">
+			</div>
 		{{ end }}
-	</footer>
-</section><!-- .article-list -->
+
+		<section class="e-content">
+			{{- .Content -}}
+		</section>
+
+	</article>
 
 
-<section class="tutorials-list mt-6">
-	<header>
-		<h2>Latest tutorials</h2>
-	</header>
+	<section class="article-list mt-6">
+		<header>
+			<h2>Latest articles</h2>
+		</header>
 
-	{{ range first 5 $tutorials }}
-	{{- partial "summary.html" . -}}
-	{{ end }}
-
-	<footer>
-		{{ with .Site.GetPage "section" "tutorial" }}
-		<a href="{{ .Permalink }}">{{ T "all-tutorials" }} &rarr;</a>
+		{{ range first 5 $articles }}
+		{{- partial "summary.html" . -}}
 		{{ end }}
-	</footer>
-</section><!-- .projects-list -->
+
+		<footer>
+			{{ with .Site.GetPage "section" "post" }}
+			<a href="{{ .Permalink }}">{{ T "all-articles" }} &rarr;</a>
+			{{ end }}
+		</footer>
+	</section><!-- .article-list -->
 
 
-<section class="projects-list mt-6">
-	<header>
-		<h2>Latest projects</h2>
-	</header>
+	<section class="tutorials-list mt-6">
+		<header>
+			<h2>Latest tutorials</h2>
+		</header>
 
-	{{ range first 5 $projects }}
-	{{- partial "summary.html" . -}}
-	{{ end }}
-
-	<footer>
-		{{ with .Site.GetPage "section" "project" }}
-		<a href="{{ .Permalink }}">{{ T "all-projects" }} &rarr;</a>
+		{{ range first 5 $tutorials }}
+		{{- partial "summary.html" . -}}
 		{{ end }}
-	</footer>
-</section><!-- .projects-list -->
+
+		<footer>
+			{{ with .Site.GetPage "section" "tutorial" }}
+			<a href="{{ .Permalink }}">{{ T "all-tutorials" }} &rarr;</a>
+			{{ end }}
+		</footer>
+	</section><!-- .projects-list -->
 
 
+	<section class="projects-list mt-6">
+		<header>
+			<h2>Latest projects</h2>
+		</header>
+
+		{{ range first 5 $projects }}
+		{{- partial "summary.html" . -}}
+		{{ end }}
+
+		<footer>
+			{{ with .Site.GetPage "section" "project" }}
+			<a href="{{ .Permalink }}">{{ T "all-projects" }} &rarr;</a>
+			{{ end }}
+		</footer>
+	</section><!-- .projects-list -->
+
+</main>
 {{ end }}

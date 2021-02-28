@@ -23,6 +23,15 @@ hugo server -D
 
 - [ ] custom fonts
 - [ ] 404
+- [x] projects > ecosystem
+  - [ ] demarkets
+  - [ ] wizardswap
+  - [ ] partyman
+  - [ ] localparticl
+  - [ ] private coldstaking script by Ben
+- pages
+  - [ ] why particl
+  - [ ] where to buy
 
 after launch:
 - [ ] check social sharing buttons
