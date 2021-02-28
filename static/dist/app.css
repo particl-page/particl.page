@@ -7567,6 +7567,9 @@ nav.navbar .social svg {
     font-size: 0.95rem;
     padding: 0.7rem 1rem; }
 
+.content-footer {
+  margin-top: 4rem; }
+
 article.pool .pool-address {
   text-align: center;
   background: rgba(86, 227, 177, 0.1);

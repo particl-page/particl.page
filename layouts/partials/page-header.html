@@ -1,7 +1,7 @@
 <header class="page-header">
 
-	{{/* with .CurrentSection.Title */}}
-	{{ with .Params.Label }}
+	<!-- Show either manual label from frontmatter OR in case of taxonomy/terms, show their name (ie. "tag") -->
+	{{ with or (.Params.Label) (.Data.Plural | humanize | singularize ) }}
 	<p class="tag is-primary">{{ . | upper }}</p>
 	{{ end }}
 

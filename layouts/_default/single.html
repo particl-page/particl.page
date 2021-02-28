@@ -31,12 +31,13 @@
 
 		{{ partial "toc.html" . }}
 
-		<section class="e-content">
+		<section class="content e-content">
 			{{- .Content -}}
 		</section>
 		
-		<footer>
-			{{- partial "about-author.html" . -}}
+		<footer class="content-footer">
+			{{/*- partial "about-author.html" . -*/}}
+			{{- partial "sharing-buttons.html" . -}}
 			{{- partial "tags.html" . -}}
 			{{- partial "categories.html" . -}}
 		</footer>
@@ -45,14 +46,14 @@
 			{{- partial "menu-contextual.html" . -}}
 		</aside>
 		
-		<aside>
+		<!--aside>
 			{{ with .PrevInSection }}
 				<a class="previous" href="{{ .Permalink }}">{{ .Title }}</a>
 			{{ end }}
 			{{ with .NextInSection }}
 				<a class="next" href="{{ .Permalink }}">{{ .Title }}</a>
 			{{ end }}
-		</aside>
+		</aside-->
 
 	</article>
 </main>

@@ -57,7 +57,7 @@
 
 
 <!-- Optionally add classes via parameter `class: someclass` in file's YAML frontmatter -->
-<body class="{{ .Type }}{{ with .Params.Class }} {{ . }}{{ end }}">
+<body class="--{{ .Type }}{{ with .Params.Class }} {{ . }}{{ end }}">
 
 	{{ block "header" . }}
 	{{ partial "site-header.html" . }}
