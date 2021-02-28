@@ -7,4 +7,4 @@ summary: "Powered by private PART cryptocurrency and decentralized tech to enabl
 
 <!--Powered by private PART cryptocurrency and decentralized tech to enable permision-less global trading of products and services-->
 
-Particl.page is a community-run effort to grow Particl ecosystem and offer useful user-centric tools.
+<!--Particl.page is a community-run effort to grow Particl ecosystem and offer useful user-centric tools.-->

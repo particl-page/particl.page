@@ -23,6 +23,7 @@ hugo server -D
 
 - [ ] custom fonts
 - [ ] 404
+- [ ] notification banner for important news/info (under hero?)
 - [x] projects > ecosystem
   - [ ] demarkets
   - [ ] wizardswap

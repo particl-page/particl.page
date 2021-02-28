@@ -7574,6 +7574,9 @@ nav.navbar .social svg {
     font-size: 0.95rem;
     padding: 0.7rem 1rem; }
 
+.content video {
+  display: block; }
+
 .content-footer {
   margin-top: 4rem; }
 

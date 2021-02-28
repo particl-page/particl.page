@@ -1,4 +1,5 @@
 ---
+label: "Particl Community"
 title: "Ecosystem"
 summary: "Collection of apps and services built on top of Particl by the community"
 menu:
