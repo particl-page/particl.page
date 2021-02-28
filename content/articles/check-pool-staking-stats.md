@@ -2,10 +2,14 @@
 label: Tutorial / Pool
 date: 2020-04-24T16:13:00-04:00
 title: "Check your staking stats"
-featured_image: "/images/howto/check-pool-stats/pool-address-stats.png"
-omit_header_text: true
+#slug:
 summary: "Access overview of your staking progress and stats on pool.particl.page"
-#type: "page"
+featured_image: "/images/howto/check-pool-stats/pool-address-stats.png"
+categories: "Tutorial"
+tags:
+  - "Staking"
+  - "Pool"
+series:
 author: "xe-non"
 aliases:
   - "/howto/check-pool-staking-stats"

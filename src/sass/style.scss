@@ -53,6 +53,13 @@ nav.navbar {
   }
 }
 
+// main page's layout (main content + sidebar)
+.main-content.columns {
+  display: flex;
+  flex-direction: column-reverse; // swap columns for mobile (so content is first)
+  @include break(t) { flex-direction: row; }
+}
+
 .content {
   h2, h3, h4 {
     &:not(:first-child) { margin-top: 2.143em; }

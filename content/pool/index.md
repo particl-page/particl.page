@@ -33,9 +33,9 @@ Staking rewards are fairly split between all stakers based on amount of their st
 
 ### Staking on a Pool
 
-- [Tutorial: How to stake on a pool with Particl Desktop?]({{< ref "/tutorials/staking-on-pool-particl-desktop.md" >}})
-- [Tutorial: How to stake on a pool with Particl Core?]({{< ref "/tutorials/staking-on-pool-particl-core-qt.md" >}})
-- [Tutorial: Checking your pool staking stats]({{< ref "/tutorials/check-pool-staking-stats.md" >}})
+- [Tutorial: How to stake on a pool with Particl Desktop?]({{< ref "/articles/staking-on-pool-particl-desktop.md" >}})
+- [Tutorial: How to stake on a pool with Particl Core?]({{< ref "/articles/staking-on-pool-particl-core-qt.md" >}})
+- [Tutorial: Checking your pool staking stats]({{< ref "/articles/check-pool-staking-stats.md" >}})
 
 
 

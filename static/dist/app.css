@@ -7545,6 +7545,13 @@ nav.navbar .social svg {
   padding: 0 0.5rem;
   font-weight: 600; }
 
+.main-content.columns {
+  display: flex;
+  flex-direction: column-reverse; }
+  @media only screen and (min-width: 769px) {
+    .main-content.columns {
+      flex-direction: row; } }
+
 .content h2:not(:first-child), .content h3:not(:first-child), .content h4:not(:first-child) {
   margin-top: 2.143em; }
 

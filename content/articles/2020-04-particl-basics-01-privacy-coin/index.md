@@ -4,9 +4,12 @@ title: "Particl Basics #1: The privacy coin"
 slug: "particl-basics-01-privacy-coin"
 summary: "Welcome to our new series of bite-sized “get to know Particl” articles! Let’s at the core of the whole platform — the PART coin."
 featured_image: "header-compressor.jpg"
-category: "articles"
-tags: ["PART coin"]
-series: ["Particl Basics"]
+categories: "Article"
+tags:
+  - "PART coin"
+  - "Privacy"
+series:
+  - "Particl Basics"
 author: "xe-non"
 aliases:
   - "/post/2020-04-particl-basics-01-privacy-coin"

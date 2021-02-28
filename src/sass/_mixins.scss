@@ -1,3 +1,25 @@
+// Breakpoints
+$break-t: 769px !default; // tablet
+$break-d: 1024px !default; // desktop
+$break-w: 1216px !default; // widescreen
+$break-f: 1408px !default; // fullhd
+
+@mixin break($media) {
+  @if $media == t {
+    @media only screen and (min-width: $break-t) { @content; }
+  }
+  @else if $media == d {
+    @media only screen and (min-width: $break-d) { @content; }
+  }
+  @else if $media == w {
+    @media only screen and (min-width: $break-w) { @content; }
+  }
+  @else if $media == f {
+    @media only screen and (min-width: $break-f) { @content; }
+  }
+}
+
+
 // @include gradient (<top-color>, <bottom-color>);
 @mixin gradient($top, $bottom) {
   background: $top;
