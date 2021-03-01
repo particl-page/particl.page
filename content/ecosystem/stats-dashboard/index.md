@@ -1,7 +1,7 @@
 ---
 title: Stats Dashboard
-featured_image: "/images/projects/stats.png"
-omit_header_text: true
+image: "particl-stats-dashboard.jpg"
+slug: stats-dashboard
 summary: Tracking Particl stats in style, all-in-one
 #type: page
 #menu: main

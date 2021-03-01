@@ -1,0 +1,51 @@
+<div class="card block">
+	<div class="card-content block h-entry">
+
+		<div class="media">
+      <div class="media-left">
+        <figure class="image is-96x96">
+          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">
+					<a href="{{ .Permalink }}">
+						{{ .Title }}
+					</a>
+				</p>
+        <p class="meta subtitle is-6">
+					{{ with .Date }}
+					Published
+					<time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format "Jan 2, 2006" }}</time>
+					{{ end }}
+		
+					{{ with .Params.Author }}
+					by
+					<span class="p-author h-card">{{ . }}</span>
+					{{ end }}
+				</p>
+      </div>
+    </div>
+
+
+
+		<div class="content p-summary">
+			{{ .Summary }}
+		</div>
+
+		<div class="taxonomies">
+			{{ if isset .Params "categories" }}
+				{{ range (.GetTerms "categories") }}
+					<a href="{{ .Permalink }}" class="tag p-category">{{ .LinkTitle }}</a>
+				{{ end }}
+			{{ end }}
+
+			<span>
+				{{ range (.GetTerms "tags") }}
+					<a href="{{ .Permalink }}" class="tag p-category">{{ .LinkTitle }}</a>
+				{{ end }}
+			</span>
+		</div>
+
+	</div>
+</div>

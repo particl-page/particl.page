@@ -3,7 +3,7 @@ date: 2020-05-01T19:07:06+02:00
 title: "Particl Basics #2: Staking"
 slug: "particl-basics-02-cold-staking"
 summary: "We're already familiar with Particl's privacy coin, so let's see how it can work for you – it's time to get into staking."
-featured_image: "header-compressor.jpg"
+image: "header-compressor.jpg"
 categories: "Article"
 tags: 
   - "Staking"

@@ -2,9 +2,9 @@
 label: Tutorial / Pool
 date: 2020-04-24T16:13:00-04:00
 title: "Staking with Particl Core"
-#slug:
+slug: staking-on-pool-particl-core-qt
 summary: "Staking setup walkthrough with Particl Core (Qt)"
-#featured_image: "/images/howto/check-pool-stats/pool-address-stats.png"
+#image: "/images/howto/check-pool-stats/pool-address-stats.png"
 categories: "Tutorial"
 tags:
   - "Staking"
@@ -27,7 +27,7 @@ aliases:
   class=""
   poster=""
   mp4=""
-  webm="/images/howto/staking-on-desktop-core/particl-core-coldstaking-activation.webm"
+  webm="particl-core-coldstaking-activation.webm"
   ogg=""
 >}}
 
@@ -49,7 +49,7 @@ Instant zapping isn’t available for Particl Core yet, but there’s a workarou
   class=""
   poster=""
   mp4=""
-  webm="/images/howto/staking-on-desktop-core/particl-core-coldstaking-zap.webm"
+  webm="particl-core-coldstaking-zap.webm"
   ogg=""
 >}}
 

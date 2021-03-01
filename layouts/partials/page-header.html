@@ -5,11 +5,11 @@
 	<p class="tag is-primary">{{ . | upper }}</p>
 	{{ end }}
 
-	{{ with .Params.Image }}
+	{{/* with .Params.Image }}
 	<div class="featured-image">
 		<img src="{{ . }}">
 	</div>
-	{{ end }}
+	{{ end */}}
 	
 	<h1 class="title is-2 p-name is-spaced">
 		{{- .Title | default .Site.Title -}}

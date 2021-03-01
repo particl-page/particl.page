@@ -1,7 +1,7 @@
 ---
 title: "About"
 summary: "Particl, served by the Community"
-#featured_image: "/images/particl-basics/particl_basics-poster.jpg"
+#image: "/images/particl-basics/particl_basics-poster.jpg"
 menu:
   main:
     weight: 10

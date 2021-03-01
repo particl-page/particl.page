@@ -1,14 +1,14 @@
 {{ define "main" }}
-<main role="main" class="main-content column"><!-- is-8 is-offset-1 -->
+<main role="main" class="main-content column is-9 is-offset-1">
 	<article>
 		
 		<span>
 			{{- .Content -}}
 		</span>
 		
-		<section>
+		<section class="columns is-mobile is-multiline">
 			{{ range .Paginator.Pages }}
-			<div>
+			<div class="column is-6-mobile is-6-tablet">
 				{{- partial "summary.html" . -}}
 			</div>
 			{{ end }}
@@ -21,7 +21,13 @@
 {{ end }}
 
 
+
 {{ define "sidebar" }}
-<!--div class="side column is-3">
-</div-->
+<div class="side column is-2">
+	<div class="sidebar">
+
+		filtering by tags/categories
+
+	</div>
+</div>
 {{ end }}

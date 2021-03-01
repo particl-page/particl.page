@@ -2,7 +2,7 @@
 label: "Particl.page"
 title: "Staking Pool"
 summary: "Particl Cold Staking pool with low fees and fair reward distribution "
-#featured_image: "/images/particl-basics/particl_basics-poster.jpg"
+#image: "/images/particl-basics/particl_basics-poster.jpg"
 menu:
   main:
     weight: 4
@@ -33,9 +33,9 @@ Staking rewards are fairly split between all stakers based on amount of their st
 
 ### Staking on a Pool
 
-- [Tutorial: How to stake on a pool with Particl Desktop?]({{< ref "/articles/staking-on-pool-particl-desktop.md" >}})
-- [Tutorial: How to stake on a pool with Particl Core?]({{< ref "/articles/staking-on-pool-particl-core-qt.md" >}})
-- [Tutorial: Checking your pool staking stats]({{< ref "/articles/check-pool-staking-stats.md" >}})
+- [Tutorial: How to stake on a pool with Particl Desktop?]({{< ref "/articles/2020-04-staking-on-pool-particl-desktop" >}})
+- [Tutorial: How to stake on a pool with Particl Core?]({{< ref "/articles/2020-04-staking-on-pool-particl-core-qt" >}})
+- [Tutorial: Checking your pool staking stats]({{< ref "/articles/2020-04-check-pool-staking-stats" >}})
 
 
 

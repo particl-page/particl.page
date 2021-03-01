@@ -1,25 +1,55 @@
-<div class="block h-entry">
-	<h1 class="title is-4 p-name">
+<div class="card">
+
+	<div class="card-image">
 		<a href="{{ .Permalink }}">
-			{{ .Title }}
+			<figure class="image is-16by9">
+				{{/* if featured image is set - show it; else show default image */}}
+				{{ if .Params.Image }}
+				<img src="{{ .Permalink }}{{ .Params.image }}" alt="{{ .Params.title }}">
+				{{ else }}
+				<img src="{{ .Site.BaseURL }}{{ .Site.Params.siteImage }}" alt="{{ .Params.title }}">
+				{{ end }}
+			</figure>
 		</a>
-	</h1>
-	<p>
-		<span class="tag">{{ humanize .Section | singularize }}</span>
-		<time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
-		{{ with .Params.Author }}<span class="p-author h-card">{{ . }}</span>{{ end }}
-		<span>
-			{{ range (.GetTerms "categories") }}
-				<a href="{{ .Permalink }}" class="p-category">{{ .LinkTitle }}</a>
+	</div>
+
+	<div class="card-content block h-entry">
+
+		<p class="title is-4">
+			<a href="{{ .Permalink }}">
+				{{ .Title }}
+			</a>
+		</p>
+
+		<p class="meta subtitle is-6 mb-5">
+			{{ with .Date }}
+			Published
+			<time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format "Jan 2, 2006" }}</time>
 			{{ end }}
-		</span>
-		<span>
-			{{ range (.GetTerms "tags") }}
-				<a href="{{ .Permalink }}" class="p-category">{{ .LinkTitle }}</a>
+
+			{{ with .Params.Author }}
+			by
+			<span class="p-author h-card">{{ . }}</span>
 			{{ end }}
-		</span>
-	</p>
-	<div class="p-summary">
-		{{ .Summary }}
+		</p>
+
+		<div class="content p-summary">
+			{{ .Summary }}
+		</div>
+
+		<div class="taxonomies">
+			{{ if isset .Params "categories" }}
+				{{ range (.GetTerms "categories") }}
+					<a href="{{ .Permalink }}" class="tag p-category">{{ .LinkTitle }}</a>
+				{{ end }}
+			{{ end }}
+
+			<span>
+				{{ range (.GetTerms "tags") }}
+					<a href="{{ .Permalink }}" class="tag p-category">{{ .LinkTitle }}</a>
+				{{ end }}
+			</span>
+		</div>
+
 	</div>
 </div>

@@ -4,7 +4,7 @@ date: 2018-11-30T18:45:00-04:00
 title: "How to Stake"
 #slug:
 summary: "How to setup staking on your Particl Desktop or Core (Qt)"
-#featured_image: "/images/howto/check-pool-stats/pool-address-stats.png"
+#image: "/images/howto/check-pool-stats/pool-address-stats.png"
 categories: "Tutorial"
 tags:
   - "Staking"
@@ -29,7 +29,7 @@ Staking on a Pool is very easy. You don’t need to register anywhere. All you n
 
 Continue by choosing respective tutorial for your client:
 
-- [Pool staking with Particl Desktop]({{< ref "articles/staking-on-pool-particl-desktop.md" >}})
-- [Pool staking with Particl Core (Qt)]({{< ref "articles/staking-on-pool-particl-core-qt.md" >}})
+- [Pool staking with Particl Desktop]({{< ref "articles/2020-04-staking-on-pool-particl-desktop.md" >}})
+- [Pool staking with Particl Core (Qt)]({{< ref "articles/2020-04-staking-on-pool-particl-core-qt.md" >}})
 
 > For extensive tutorial on staking, check [Staking on Particl.wiki](https://particl.wiki/tutorial/staking/cold-staking)

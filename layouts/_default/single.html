@@ -29,6 +29,12 @@
 
 		{{/* partial "page-header.html" . */}}
 
+		{{ with .Params.Image }}
+		<div class="featured-image mb-6">
+			<img src="{{ . }}">
+		</div>
+		{{ end }}
+
 		{{ partial "toc.html" . }}
 
 		<section class="content e-content">

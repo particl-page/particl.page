@@ -11,7 +11,7 @@ enableGitInfo = false
 # https://gohugo.io/content-management/urls/
 [permalinks]
   post = "/:sections/:slug/"
-  project = "/:sections/:slug/"
+  ecosystem = "/:sections/:slug/"
 
 [params]
   # SEO & Open:graph meta

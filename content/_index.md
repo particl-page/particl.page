@@ -1,7 +1,7 @@
 ---
 label: Welcome to Particl
 title: "Borderless and censorship-free ecommerce for all"
-featured_image: "/images/particl-basics/particl_basics-poster.jpg"
+image: "/images/particl-basics/particl_basics-poster.jpg"
 summary: "Powered by private PART cryptocurrency and decentralized tech to enable permision-less global trading of products and services"
 ---
 
