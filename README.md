@@ -22,7 +22,6 @@ After you've done your changes, push to Github and submit a new PR.
 ## TODO
 
 - [ ] custom fonts
-- [ ] plausible
 - [x] projects > ecosystem
   - [ ] demarkets
   - [ ] wizardswap
