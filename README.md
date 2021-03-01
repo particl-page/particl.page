@@ -22,13 +22,7 @@ After you've done your changes, push to Github and submit a new PR.
 ## TODO
 
 - [ ] custom fonts
-- taxonomies
-  - [ ] /tags
-  - [ ] /categories
-- [ ] notification banner for important news/info (under hero?)
-- [ ] found a bug? Edit on GH
-- [ ] comments
-- [ ] plausibe/goat
+- [ ] plausible
 - [x] projects > ecosystem
   - [ ] demarkets
   - [ ] wizardswap
@@ -38,6 +32,10 @@ After you've done your changes, push to Github and submit a new PR.
 - pages
   - [ ] why particl
   - [ ] where to buy
+- nice to have's
+  - [ ] notification banner for important news/info (under hero?)
+  - [ ] comments
+  - [ ] found a bug? Edit on GH
 
 after launch:
 - [ ] check social sharing buttons

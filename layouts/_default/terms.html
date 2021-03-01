@@ -1,11 +1,13 @@
 {{ define "main" }}
 {{ $data := .Data }}
-<main role="main" class="main-content column is-8">
+<main role="main" class="main-content column">
+
 	<article>
 		<div>
 			{{ .Content }}
 		</div>
 	</article>
+
 	<!--div>
 		<section>
 			{{ range $key, $value := .Data.Terms }}
@@ -20,18 +22,48 @@
 			{{ end }}
 		</section>
 	</div-->
-	{{ range .Data.Terms.Alphabetical }}
+
+	{{/* range .Data.Terms.Alphabetical }}
 
 	<article class="list-item h-entry">
 		<h3 class="p-name">
 			<a href="{{ .Page.Permalink }}">
 				{{ .Page.Title }}
 				<span class="count tag">{{ .Count }}</span>
+				<p>
+					{{ .Page.Params.Summary }}
+				</p>
 			</a>
 		</h3>
 	</article>
 
-	{{ end }}
+	{{ end */}}
+	
+	<div class="columns is-multiline">
+
+		{{ range .Pages }}
+			<div class="column is-6">
+				<div class="card block">
+					<div class="card-content">
+						<div class="media">
+							{{ with .Params.image }}
+								<div class="media-left">
+									<figure class="image is-48x48">
+										<a href="{{ $.Permalink }}"><img src="{{ . }}" alt="{{ $.Title }}"></a>
+									</figure>
+								</div>
+							{{ end }}
+							<div class="media-content">
+								<p class="title is-4"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+								<p class="subtitle is-6">{{ .Params.summary }}</p>
+							</div>
+						</div>
+					</div>
+				</div><!-- .card -->
+			</div><!-- .column -->
+		{{ end }}
+
+	</div><!-- .columns -->
 
 </main>
 {{ end }}
