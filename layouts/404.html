@@ -1,8 +1,28 @@
-{{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
 {{ define "main" }}
-<article>
-	<h1>
-		This is not the page you were looking for
-	</h1>
-</article>
+<main role="main" class="e404 main-content column">
+
+	{{/* "Type" "in" "<section name AKA folder in /content/>" */}}
+	{{ $articles	:= where .Site.RegularPages "Type" "in" "articles" }}
+	{{ $projects 	:= where .Site.RegularPages "Type" "in" "ecosystem" }}
+
+
+	<article class="h-entry">
+
+		<section class="content e-content">
+			<p>
+				<strong>Sorry, this page doesn't exist.</strong>
+			</p>
+			<p>
+				Here's a couple of way how to find what you're looking for:
+			</p>
+
+			<ul>
+				<li><a href="/tags">Browse available tags</a></li>
+				<li><a href="/categories">Browse article categories</a></li>
+				<li><a href="/">Got back to homepage</a></li>
+			</ul>
+		</section>
+
+	</article>
+</main>
 {{ end }}

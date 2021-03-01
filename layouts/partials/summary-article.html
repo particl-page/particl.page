@@ -38,12 +38,12 @@
 				<div class="taxonomies">
 					{{ if isset .Params "categories" }}
 						{{ range (.GetTerms "categories") }}
-							<a href="{{ .Permalink }}" class="category tag p-category">{{ .LinkTitle }}</a>
+							<a href="{{ .Permalink }}" class="category tag p-category" title="{{ .LinkTitle }} category">{{ .LinkTitle }}</a>
 						{{ end }}
 					{{ end }}
 					<span>
 						{{ range (.GetTerms "tags") }}
-							<a href="{{ .Permalink }}" class="tag p-category is-darker">{{ .LinkTitle }}</a>
+							<a href="{{ .Permalink }}" class="tag p-category is-darker" title="{{ .LinkTitle }} tag">{{ .LinkTitle }}</a>
 						{{ end }}
 					</span>
 				</div>

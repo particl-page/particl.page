@@ -1,29 +1,34 @@
 # particl.page
 
-## Build
+Particl.page is a community-run effort to grow Particl ecosystem and offer useful user-centric tools. Now with articles and projects built by the community.
 
-Assets are compiled using Webpack in `src/` directory:
+To submit a new article/tutorial or a project, please open a new Issue and follow the instructions there.
 
-```
-cd src/
-yarn install
-yarn build
-```
 
-Building the whole site via Hugo happens automatically after commiting to `master` on GitHub.
+## Development
 
-For local development, install Hugo locally and run dev server via:
+Install Node.js, Yarn and Hugo (if you haven't already). Fetch project requirements:
 
-```
-hugo server -D
-```
+    yarn install
+
+For local development, start Hugo server (required) and if you're planning on changing styles or javascript, run Webpack as well (optional):
+
+    yarn hugo
+    yarn dev
+
+After you've done your changes, push to Github and submit a new PR.
 
 
 ## TODO
 
 - [ ] custom fonts
-- [ ] 404
+- taxonomies
+  - [ ] /tags
+  - [ ] /categories
 - [ ] notification banner for important news/info (under hero?)
+- [ ] found a bug? Edit on GH
+- [ ] comments
+- [ ] plausibe/goat
 - [x] projects > ecosystem
   - [ ] demarkets
   - [ ] wizardswap
@@ -36,41 +41,5 @@ hugo server -D
 
 after launch:
 - [ ] check social sharing buttons
-
-
-## Shortcodes reference
-
-Links:
-
-```
-[xxxxxxx]({{< ref "xxxx/xxxx.md" >}})
-```
-
-Image:
-
-```
-{{< figure
-  title=""
-  caption="Description"
-  src="/images/image.png"
-  link="/images/image.png"
-  attrlink=""
-  attr=""
->}}
-```
-
-Video:
-
-```
-{{< video
-  class=""
-  poster=""
-  mp4="/video.mp4"
-  webm="/video.webm"
-  ogg="/video.ogg"
->}}
-```
-
-
-
+- [ ] ping other projects for links back
 

@@ -7515,6 +7515,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 html {
   background: var(--bg); }
 
+figure img {
+  border-radius: 4px; }
+
+video {
+  border-radius: 4px; }
+
 .button.is-dark {
   background: var(--bg-lightest); }
   .button.is-dark:hover, .button.is-dark:focus {
