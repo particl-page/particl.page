@@ -113,6 +113,10 @@ nav.navbar {
 }
 
 article {
+  .featured-image {
+    img { border-radius: 4px; }
+  }
+
   // Pool page
   &.pool {
     .pool-address {
@@ -124,7 +128,9 @@ article {
       user-select: all;
     }
   }
-}
+
+} // < article
+
 
 .sidebar {
   position: sticky;

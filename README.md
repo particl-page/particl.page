@@ -22,15 +22,18 @@ After you've done your changes, push to Github and submit a new PR.
 ## TODO
 
 - [ ] custom fonts
+
 - [x] projects > ecosystem
   - [ ] demarkets
   - [ ] wizardswap
   - [ ] partyman
   - [ ] localparticl
   - [ ] private coldstaking script by Ben
+
 - pages
   - [ ] why particl
   - [ ] where to buy
+
 - nice to have's
   - [ ] notification banner for important news/info (under hero?)
   - [ ] comments

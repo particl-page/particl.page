@@ -2,9 +2,9 @@
 label: Tutorial / Pool
 date: 2018-11-30T18:45:00-04:00
 title: "How to Stake"
-#slug:
+slug: staking-on-pool
 summary: "How to setup staking on your Particl Desktop or Core (Qt)"
-#image: "/images/howto/check-pool-stats/pool-address-stats.png"
+image: "how-to-stake-min.jpg"
 categories: "Tutorial"
 tags:
   - "Staking"

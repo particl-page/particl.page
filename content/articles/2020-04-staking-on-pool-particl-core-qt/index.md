@@ -4,7 +4,7 @@ date: 2020-04-24T16:13:00-04:00
 title: "Staking with Particl Core"
 slug: staking-on-pool-particl-core-qt
 summary: "Staking setup walkthrough with Particl Core (Qt)"
-#image: "/images/howto/check-pool-stats/pool-address-stats.png"
+image: "staking-on-particl-core-min.png"
 categories: "Tutorial"
 tags:
   - "Staking"

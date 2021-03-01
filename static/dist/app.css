@@ -7599,6 +7599,9 @@ nav.navbar .social svg {
 .content-footer {
   margin-top: 4rem; }
 
+article .featured-image img {
+  border-radius: 4px; }
+
 article.pool .pool-address {
   text-align: center;
   background: rgba(86, 227, 177, 0.1);

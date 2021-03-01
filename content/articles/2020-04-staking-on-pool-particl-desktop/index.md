@@ -4,7 +4,7 @@ date: 2020-04-24T16:13:00-04:00
 title: "Staking with Particl Desktop"
 slug: staking-on-pool-particl-desktop
 summary: "Staking setup walkthrough with Particl Desktop"
-#image: "/images/howto/check-pool-stats/pool-address-stats.png"
+image: "staking-on-particl-desktop-min.png"
 categories: "Tutorial"
 tags:
   - "Staking"

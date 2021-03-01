@@ -4,7 +4,7 @@ date: 2020-04-24T16:13:00-04:00
 title: "Check your staking stats"
 slug: check-pool-staking-stats
 summary: "Access overview of your staking progress and stats on pool.particl.page"
-image: "pool-address-stats.png"
+image: "check-part-staking-stats-min.png"
 categories: "Tutorial"
 tags:
   - "Staking"
