@@ -8,11 +8,11 @@ summary: Tracking Particl stats in style, all-in-one
 layout: "project"
 aliases:
   - "/project/stats-dashboard"
-project:
-  author: "xe-non"
+projects: "Data dashboard"
+info:
+  author: "xe-non, Amotio"
   url: "https://stats.particl.page"
   repo: ""
-  cat: "Data dashboard"
   development: "Private"
 ---
 

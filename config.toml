@@ -51,6 +51,8 @@ enableGitInfo = false
   category = "categories"
   tag = "tags"
   series = "series"
+  project = "projects" # type of project in ecosystem (separate category)
+
 
 [frontmatter]
   date = ["date", "publishDate"]
