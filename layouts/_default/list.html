@@ -1,16 +1,16 @@
 {{ define "main" }}
-<main role="main" class="main-content column is-9 is-offset-1">
+<main role="main" class="main-content column is-8 is-offset-1">
 	<article>
 		
 		<span>
 			{{- .Content -}}
 		</span>
 		
-		<section class="columns is-mobile is-multiline">
+		<section><!-- class="columns is-mobile is-multiline" -->
 			{{ range .Paginator.Pages }}
-			<div class="column is-6-mobile is-6-tablet">
-				{{- partial "summary.html" . -}}
-			</div>
+			<!--div class="column is-6-mobile is-6-tablet"-->
+				{{- partial "summary-article.html" . -}}
+			<!--/div-->
 			{{ end }}
 		</section>
 
@@ -23,10 +23,46 @@
 
 
 {{ define "sidebar" }}
-<div class="side column is-2">
+<div class="side column is-3">
 	<div class="sidebar">
 
-		filtering by tags/categories
+		<aside class="taxonomy-list block">
+			<h3 class="title is-5">Categories</h3>
+
+			<div class="card">
+				<div class="card-content">
+					<ul>
+						{{ range .Site.Taxonomies.categories }}
+						<li>
+							<a href="{{ .Page.Permalink }}" class="item">
+								<span class="name">{{ .Page.Title }}</span>
+								<span class="tag is-darker">{{ .Count }}</span>
+							</a>
+						</li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>
+		</aside>
+		
+		<aside class="taxonomy-list block">
+			<h3 class="title is-5">Browse topics</h3>
+
+			<div class="card">
+				<div class="card-content">
+					<ul>
+						{{ range .Site.Taxonomies.tags }}
+						<li>
+							<a href="{{ .Page.Permalink }}" class="item">
+								<span class="name">{{ .Page.Title }}</span>
+								<span class="tag is-darker">{{ .Count }}</span>
+							</a>
+						</li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>
+		</aside>
 
 	</div>
 </div>

@@ -2,13 +2,11 @@
 	<div class="container">
 		<div class="columns is-mobile is-multiline">
 
-			<div class="column is-full-mobile is-half-tablet">
+			<div class="branding column is-full-mobile is-half-tablet">
 
 				<div class="logotype">
-					<span class="site-name">Particl</span>
-					<span class="green dot">∘</span>
-					<span class="domain">page</span>
-					<span class="version">3.0</span>
+					<span class="site-name">Particl</span><span class="green dot">∘</span><span class="domain">page</span>
+					<small class="version">{{ .Site.Params.siteVersion}}</small>
 				</div>
 
 				<p class="site-desc">
@@ -16,7 +14,7 @@
 				</p>
 
 				<small class="copyright">
-					&copy; {{ with .Site.Params.copyrightSince }}{{ . }}&ndash;{{ end }}{{ now.Format "2006" }} Particl.page Contributors
+					&copy; {{ with .Site.Params.copyrightSince }}{{ . }}&ndash;{{ end }}{{ now.Format "2006" }} <a href="/about">Particl.page</a> Contributors
 				</small>
 
 				<div class="social">
@@ -28,27 +26,27 @@
 			<div class="links projects column is-half-mobile">
 				<div class="title is-6">Our Projects</div>
 				<ul>
-					<li><a href="https://stats.particl.page">Particl Stats</a></li>
-					<li><a href="https://pool.particl.page">Staking Pool</a></li>
+					<li><a target="_blank" rel="noopener" href="https://stats.particl.page">Particl Stats {{ partial "new-window-icon.html" . }}</a></li>
+					<li><a target="_blank" rel="noopener" href="https://pool.particl.page">Staking Pool {{ partial "new-window-icon.html" . }}</a></li>
 				</ul>
 			</div>
 
 			<div class="links official column is-half-mobile">
 				<div class="title is-6">Particl links</div>
 				<ul>
-					<li><a href="https://particl.io">Official website</a></li>
-					<li><a href="https://particl.news">Latest news</a></li>
-					<li><a href="https://particl.wiki">Project Wiki</a></li>
-					<li><a href="https://ccs.particl.io">Crowdfunding</a></li>
+					<li><a target="_blank" rel="noopener" href="https://particl.io">Official website {{ partial "new-window-icon.html" . }}</a></li>
+					<li><a target="_blank" rel="noopener" href="https://particl.news">Latest news {{ partial "new-window-icon.html" . }}</a></li>
+					<li><a target="_blank" rel="noopener" href="https://particl.wiki">Project Wiki {{ partial "new-window-icon.html" . }}</a></li>
+					<li><a target="_blank" rel="noopener" href="https://ccs.particl.io">Crowdfunding {{ partial "new-window-icon.html" . }}</a></li>
 				</ul>
 			</div>
 
 			<div class="links other column is-half-mobile">
 				<div class="title is-6">Our Friends</div>
 				<ul>
-					<li><a href="https://demarkets.io">Demarkets.io</a></li>
-					<li><a href="https://localparticl.com">LocalParticl.com</a></li>
-					<li><a href="https://wizardswap.io">WizardSwap.io</a></li>
+					<li><a target="_blank" rel="noopener" href="https://demarkets.io">Demarkets.io {{ partial "new-window-icon.html" . }}</a></li>
+					<li><a target="_blank" rel="noopener" href="https://localparticl.com">LocalParticl.com {{ partial "new-window-icon.html" . }}</a></li>
+					<li><a target="_blank" rel="noopener" href="https://wizardswap.io">WizardSwap.io {{ partial "new-window-icon.html" . }}</a></li>
 				</ul>
 			</div>
 

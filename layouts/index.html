@@ -3,17 +3,10 @@
 
 	{{/* "Type" "in" "<section name AKA folder in /content/>" */}}
 	{{ $articles	:= where .Site.RegularPages "Type" "in" "articles" }}
-	{{ $tutorials := where .Site.RegularPages "Type" "in" "tutorials" }}
 	{{ $projects 	:= where .Site.RegularPages "Type" "in" "ecosystem" }}
 
 
 	<article class="h-entry">
-
-		{{ with .Params.Image }}
-			<div class="featured-image">
-				<img src="{{ . }}">
-			</div>
-		{{ end }}
 
 		<!--section class="e-content">
 			{{- .Content -}}
@@ -27,8 +20,8 @@
 			<h2 class="title is-4 mb-5">Latest articles</h2>
 		</header>
 
-		{{ range first 3 $articles }}
-		{{- partial "summary.html" . -}}
+		{{ range first 4 $articles }}
+		{{- partial "summary-article.html" . -}}
 		{{ end }}
 
 		<footer>
@@ -44,9 +37,17 @@
 			<h2 class="title is-4 mb-5">Community projects</h2>
 		</header>
 
-		{{ range first 3 $projects }}
+		{{/* range first 3 $projects }}
 		{{- partial "summary-ecosystem.html" . -}}
-		{{ end }}
+		{{ end */}}
+
+		<section class="columns is-mobile is-multiline">
+			{{ range first 6 $projects }}
+			<div class="column is-6-mobile is-4-tablet">
+				{{- partial "summary-ecosystem.html" . -}}
+			</div>
+			{{ end }}
+		</section>
 
 		<footer>
 			{{ with .Site.GetPage "section" "ecosystem" }}
@@ -76,10 +77,11 @@
 				<p>
 					Particl's mission is to empower society by fostering a new decentralized, private and democratic economy supported by its blockchain platform.
 				</p>
+				<h3 class="title is-6">Official links</h3>
 				<p class="buttons">
-					<a href="https://particl.io" target="_blank" rel="noopener" class="button is-dark">Particl website</a>
-					<a href="https://particl.news" target="_blank" rel="noopener" class="button is-dark">News</a>
-					<a href="https://particl.wiki" target="_blank" rel="noopener" class="button is-dark">Wiki</a>
+					<a href="https://particl.io" title="Official Particl website" target="_blank" rel="noopener" class="button is-dark">Website {{ partial "new-window-icon.html" . }}</a>
+					<a href="https://particl.news" title="Latest Particl news" target="_blank" rel="noopener" class="button is-dark">News {{ partial "new-window-icon.html" . }}</a>
+					<a href="https://particl.wiki" title="Browse Particl Wiki" target="_blank" rel="noopener" class="button is-dark">Wiki {{ partial "new-window-icon.html" . }}</a>
 				</p>
 			</div>
 		</section>

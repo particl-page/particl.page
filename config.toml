@@ -17,6 +17,7 @@ enableGitInfo = false
   # SEO & Open:graph meta
   siteDescription = "Community-run site around privacy-focused crypto Particl Project"
   siteImage = "images/particl_basics-poster.jpg" # 1200 × 630 px image in /static folder
+  siteVersion = "3.0"
 
   # displays in footer's copyright (until this year)
   copyrightSince = 2018
