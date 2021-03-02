@@ -40,6 +40,5 @@ After you've done your changes, push to Github and submit a new PR.
   - [ ] found a bug? Edit on GH
 
 after launch:
-- [ ] check social sharing buttons
 - [ ] ping other projects for links back
 
