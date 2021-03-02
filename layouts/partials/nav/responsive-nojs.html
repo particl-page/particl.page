@@ -1,0 +1,50 @@
+<nav id="main">
+  <div class="page-wrapper">
+
+    <a class="branding" href="{{ .Site.BaseURL }}{{ .Site.LanguagePrefix }}">
+      {{ .Site.Title }}
+    </a>
+
+    <!-- Toggle "button" for mobile menu -->
+    <input type="checkbox" id="menu-toggle" name="menu-toggle">
+    <label for="menu-toggle" id="menu-toggle-label">
+      <span class="label">{{ T "show-menu" }}</span>
+      <span class="ico-open">
+        {{ partial "svg/menu.svg" . }}
+      </span>
+      <span class="ico-close">
+        {{ partial "svg/menu-close.svg" . }}
+      </span>
+    </label>
+
+    <div id="menu">
+
+      <section class="translations">
+        <!-- condition needs to be inside, otherwise it's breaking space-between flex layout and menu is pushed next to logo if translations aren't present -->
+        {{ if .IsTranslated }}
+        <h4 class="--mobile-only">{{ i18n "translations" }}</h4>
+        {{ partial "i18nlist.html" . }}
+        {{ end }}
+      </section>
+
+      {{ if .Site.Menus.main }}
+      {{ $currentPage := . }}
+      <ul class="navigation">
+        {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+      <div class="socials --mobile-only">
+        <h4 class="--mobile-only">{{ i18n "socials" }}</h4>
+        {{ partial "social-follow.html" . }}
+      </div>
+
+    </div><!-- #menu -->
+  </div><!-- .wrapper -->
+</nav><!-- #main -->

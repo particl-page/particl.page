@@ -1,30 +1,46 @@
-{{ $featured_image := .Params.featured_image }}
+<header class="page-header">
 
-{{ if $featured_image }}
-  {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
-  {{ $featured_image := (trim $featured_image "/") | absURL }}
-  <header class="cover bg-top" style="background-image: url('{{ $featured_image }}');">
-    <div class="pb3-m pb6-l bg-black-60">
-      {{ partial "site-navigation.html" . }}
-      <div class="tc-l pv6 ph3 ph4-ns">
-        {{ if not .Params.omit_header_text }}
-          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">{{ .Title | default .Site.Title }}</h1>
-          {{ with .Params.description  }}
-            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-              {{ . }}
-            </h2>
-          {{ end }}
-        {{ end }}
-      </div>
-    </div>
-  </header>
+	<!-- Show either manual label from frontmatter OR in case of taxonomy/terms, show their name (ie. "tag") -->
+	{{ with or (.Params.Label) (.Data.Plural | humanize | singularize ) }}
+	<p class="tag is-primary">{{ . | upper }}</p>
+	{{ end }}
 
-{{ else }}
+	{{/* with .Params.Image }}
+	<div class="featured-image">
+		<img src="{{ . }}">
+	</div>
+	{{ end */}}
+	
+	<h1 class="title is-2 p-name is-spaced">
+		{{- .Title | default .Site.Title -}}
+	</h1>
+	
+	{{ with .Params.Summary }}
+	<p class="subtitle is-5 p-summary">{{ . }}</p>
+	{{ end }}
 
-  <header>
-    <div class="{{ .Site.Params.background_color_class | default "bg-black" }}">
-      {{ partial "site-navigation.html" . }}
-    </div>
-  </header>
+	<!--p class="meta">
 
-{{ end }}
+		{{ with .Date }}
+		Written
+		<time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+			{{- .Format "January 2, 2006" -}}
+		</time>
+		{{ end }}
+
+		{{ with .Params.Author }}
+		by
+		<span class="p-author h-card">{{ . }}</span>
+		{{ end }}
+
+		{{ with .Lastmod }}
+		&bull;
+		Updated
+		<time class="dt-updated" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+			{{- .Format "January 2, 2006" -}}
+		</time>
+		{{ end }}
+
+	</p-->
+
+</header>

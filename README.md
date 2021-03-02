@@ -1,62 +1,45 @@
 # particl.page
 
-## Build
+Particl.page is a community-run effort to grow Particl ecosystem and offer useful user-centric tools. Now with articles and projects built by the community.
 
-Assets are compiled using Webpack in `src/` directory:
-
-```
-cd src/
-yarn install
-yarn build
-```
-
-Building the whole site via Hugo happens automatically after commiting to `master` on GitHub.
-
-For local development, install Hugo locally and run dev server via:
-
-```
-hugo server -D
-```
+To submit a new article/tutorial or a project, please open a new Issue and follow the instructions there.
 
 
-## Notes
+## Development
 
-- [Tachyons docs](http://tachyons.io/docs/) (in-markup styling)
+Install Node.js, Yarn and Hugo (if you haven't already). Fetch project requirements:
 
+    yarn install
 
-## Shortcodes reference
+For local development, start Hugo server (required) and if you're planning on changing styles or javascript, run Webpack as well (optional):
 
-Links:
+    yarn hugo
+    yarn dev
 
-```
-[xxxxxxx]({{< ref "xxxx/xxxx.md" >}})
-```
-
-Image:
-
-```
-{{< figure
-  title=""
-  caption="Description"
-  src="/images/image.png"
-  link="/images/image.png"
-  attrlink=""
-  attr=""
->}}
-```
-
-Video:
-
-```
-{{< video
-  class=""
-  poster=""
-  mp4="/video.mp4"
-  webm="/video.webm"
-  ogg="/video.ogg"
->}}
-```
+After you've done your changes, push to Github and submit a new PR.
 
 
+## TODO
 
+- [ ] custom fonts
+
+- [x] projects > ecosystem
+  - [ ] demarkets
+  - [ ] wizardswap
+  - [ ] partyman
+  - [ ] localparticl
+  - [ ] private coldstaking script by Ben
+
+- pages
+  - [ ] why particl
+  - [ ] where to buy
+
+- nice to have's
+  - [ ] notification banner for important news/info (under hero?)
+  - [ ] comments
+  - [ ] found a bug? Edit on GH
+
+after launch:
+- [ ] check social sharing buttons
+- [ ] ping other projects for links back
 

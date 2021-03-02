@@ -1,75 +1,106 @@
 {{ define "main" }}
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    {{ .Content }}
-  </article>
+<main role="main" class="main-content column is-7 is-offset-1">
 
-  {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
-  {{ $postsSection := slice "post" }}
-  {{ $projectsSection := slice "project" }}
-  {{ $howtosSection := slice "howto" }}
-  
-
-  {{/* Display couple of Projects */}}
-  {{ $projects := where .Site.RegularPages "Section" "in" $projectsSection }}
-  {{ $projects_count := len $projects }}
-  {{ if ge $projects_count 1 }}
-    <section class="flex-ns flex-wrap justify-center mw9 center mb4">
-      {{ range (first 3 $projects) }}
-        <div class="relative w-100 w-20-l ma3 bg-white">
-          {{- partial "vertical-summary-with-image.html" . -}}
-        </div>
-      {{ end }}
-    </section>
-  {{ end }}
+	{{/* "Type" "in" "<section name AKA folder in /content/>" */}}
+	{{ $articles	:= where .Site.RegularPages "Type" "in" "articles" }}
+	{{ $projects 	:= where .Site.RegularPages "Type" "in" "ecosystem" }}
 
 
-  {{/* Create a variable with that section to use in multiple places. */}}
-  {{ $posts := where .Site.RegularPages "Section" "in" $postsSection }}
-  {{/* Check to see if the section is defined for ranging through it */}}
-  {{ $posts_count := len $posts }}
-  {{ if ge $posts_count 1 }}
-    {{/* Derive the section name  */}}
-    {{ $posts_name := index (.Site.Params.mainSections) 0 }}
+	<article class="h-entry">
 
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
-      {{/* Use $posts_name to get the section title. Use "with" to only show it if it exists */}}
-       {{ with .Site.GetPage "section" $posts_name }}
-          <h1 class="flex-none mt0 mw8 center">
-            <!--{{ $.Param "recent_copy" | default (i18n "recentTitle" .) }}-->
-            Latest Articles
-          </h1>
-        {{ end }}
+		<!--section class="e-content">
+			{{- .Content -}}
+		</section-->
 
-      {{ $n_posts := $.Param "recent_posts_number" | default 3 }}
+	</article>
 
-      <section class="w-100 mw8 center">
-        {{/* Range through the first $n_posts items of the section */}}
-        {{ range (first $n_posts $posts) }}
-          <div class="relative w-100 mb4">
-            {{ partial "summary-with-image.html" . }}
-          </div>
-        {{ end }}
-      </section>
 
-      {{ if ge $posts_count (add $n_posts 1) }}
-      <section class="w-100">
-        <!--h1 class="f3">{{ i18n "more" }}</h1>
-        {{/* Now, range through the next four after the initial $n_posts items. Nest the requirements, "after" then "first" on the outside */}}
-        {{ range (first 4 (after $n_posts $posts))  }}
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="{{ .Permalink }}" class="link black dim">
-              {{ .Title }}
-            </a>
-          </h2>
-        {{ end }}-->
+	<section class="article-list">
+		<header>
+			<h2 class="title is-4 mb-5">Latest articles</h2>
+		</header>
 
-        {{/* As above, Use $posts_name to get the section title, and URL. Use "with" to only show it if it exists */}}
-        {{ with .Site.GetPage "section" $posts_name }}
-          <a href="{{ .Permalink }}" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">{{ i18n "allTitle" . }}</a>
-        {{ end }}
-      </section>
-      {{ end }}
+		{{ range first 4 $articles }}
+		{{- partial "summary-article.html" . -}}
+		{{ end }}
 
-      </div>
-  {{ end }}
+		<footer>
+			{{ with .Site.GetPage "section" "articles" }}
+			<a href="{{ .Permalink }}" class="button is-dark">All articles &rarr;</a>
+			{{ end }}
+		</footer>
+	</section><!-- .article-list -->
+
+
+	<section class="projects-list mt-6">
+		<header>
+			<h2 class="title is-4 mb-5">Community projects</h2>
+		</header>
+
+		{{/* range first 3 $projects }}
+		{{- partial "summary-ecosystem.html" . -}}
+		{{ end */}}
+
+		<section class="columns is-mobile is-multiline">
+			{{ range first 6 $projects }}
+			<div class="column is-6-mobile is-4-tablet">
+				{{- partial "summary-ecosystem.html" . -}}
+			</div>
+			{{ end }}
+		</section>
+
+		<footer>
+			{{ with .Site.GetPage "section" "ecosystem" }}
+			<a href="{{ .Permalink }}" class="button is-dark">All community projects &rarr;</a>
+			{{ end }}
+		</footer>
+	</section><!-- .projects-list -->
+
+</main>
+{{ end }}
+
+
+
+
+{{ define "sidebar" }}
+<div class="side column is-4">
+	<div class="sidebar">
+		
+		<h2 class="title is-4">Discover Particl</h2>
+		<section class="card content">
+			<div class="card-image video is-16by9">
+				<video controls preload="metadata" poster="/video/particl-intro.jpg">
+					<source src="/video/particl-intro.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="card-content">
+				<p>
+					Particl's mission is to empower society by fostering a new decentralized, private and democratic economy supported by its blockchain platform.
+				</p>
+				<h3 class="title is-6">Official links</h3>
+				<p class="buttons">
+					<a href="https://particl.io" title="Official Particl website" target="_blank" rel="noopener" class="button is-dark">Website {{ partial "new-window-icon.html" . }}</a>
+					<a href="https://particl.news" title="Latest Particl news" target="_blank" rel="noopener" class="button is-dark">News {{ partial "new-window-icon.html" . }}</a>
+					<a href="https://particl.wiki" title="Browse Particl Wiki" target="_blank" rel="noopener" class="button is-dark">Wiki {{ partial "new-window-icon.html" . }}</a>
+				</p>
+			</div>
+		</section>
+		
+		<h2 class="title is-4 mt-6">About Particl.page</h2>
+		<section class="card content">
+			<div class="card-content">
+				<p>Particl.page is a community-run effort to grow Particl ecosystem and offer useful user-centric tools</p>
+				<p>
+					<a href="/about" class="button is-dark">Learn more</a>
+				</p>
+				<h3 class="title is-6">Submit new&hellip;</h3>
+				<p class="buttons">
+					<a target="_blank" rel="noopener" href="https://github.com/particl-page/particl.page/issues/new?assignees=xe-nonymous&labels=enhancement&template=articles--submit-a-new-article.md&title=%5BNew+article%5D+" class="button is-dark">Article {{ partial "new-window-icon.html" . }}</a>
+					<a target="_blank" rel="noopener" href="https://github.com/particl-page/particl.page/issues/new?assignees=xe-nonymous&labels=enhancement&template=ecosystem--submit-a-new-project.md&title=%5BNew+project%5D+" class="button is-dark">Project {{ partial "new-window-icon.html" . }}</a>
+				</p>
+			</div>
+		</section>
+
+	</div>
+</div>
 {{ end }}

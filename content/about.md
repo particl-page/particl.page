@@ -1,7 +1,7 @@
 ---
 title: "About"
-description: "Particl, served by the Community"
-#featured_image: "/images/particl-basics/particl_basics-poster.jpg"
+summary: "Particl, served by the Community"
+#image: "/images/particl-basics/particl_basics-poster.jpg"
 menu:
   main:
     weight: 10
@@ -12,14 +12,12 @@ Particl.page is a community-run effort to grow [Particl ecosystem](https://parti
 
 Community is at heart of every project, crypto or otherwise. We want to stimulate a nice, friendly community around Particl Project and help it grow. To educate people in the process. To offer a helping hand and guidance for those, who seek it.
 
-Discover our [projects](/projects) &bull; [articles](/articles) &bull; [tutorials](/howto)
-
 
 ## Contact
 
-- Twitter: [@particl_page](https://twitter.com/particl_page)
-- Riot: [@particl.page](https://riot.im/app/#/room/#particl:matrix.org)
-- xnnms at protonmail dot com
+- **Email:** xe-non @ particl.page (preferred)
+- **Twitter:** [@particl_page](https://twitter.com/particl_page)
+- **Riot:** [@particl.page](https://riot.im/app/#/room/#particl:matrix.org)
 
 
 ## Donate

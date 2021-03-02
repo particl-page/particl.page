@@ -1,13 +1,55 @@
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">{{ humanize .Section }}</span>
-    <h1 class="f3 mt2 near-black">
-      <a href="{{ .Permalink }}" class="link black dim">
-        {{ .Title }}
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      {{ .Summary  }}
-    </div>
-  </div>
+<div class="card">
+
+	<div class="card-image">
+		<a href="{{ .Permalink }}">
+			<figure class="image is-16by9">
+				{{/* if featured image is set - show it; else show default image */}}
+				{{ if .Params.Image }}
+				<img src="{{ .Permalink }}{{ .Params.image }}" alt="{{ .Params.title }}">
+				{{ else }}
+				<img src="{{ .Site.BaseURL }}{{ .Site.Params.siteImage }}" alt="{{ .Params.title }}">
+				{{ end }}
+			</figure>
+		</a>
+	</div>
+
+	<div class="card-content block h-entry">
+
+		<p class="title is-4">
+			<a href="{{ .Permalink }}">
+				{{ .Title }}
+			</a>
+		</p>
+
+		<p class="meta subtitle is-6">
+			{{ with .Date }}
+			Published
+			<time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format "Jan 2, 2006" }}</time>
+			{{ end }}
+
+			{{ with .Params.Author }}
+			by
+			<span class="p-author h-card">{{ . }}</span>
+			{{ end }}
+		</p>
+
+		<div class="content p-summary my-5">
+			{{ .Summary }}
+		</div>
+
+		<div class="taxonomies">
+			{{ if isset .Params "categories" }}
+				{{ range (.GetTerms "categories") }}
+					<a href="{{ .Permalink }}" class="tag p-category">{{ .LinkTitle }}</a>
+				{{ end }}
+			{{ end }}
+
+			<span>
+				{{ range (.GetTerms "tags") }}
+					<a href="{{ .Permalink }}" class="tag p-category">{{ .LinkTitle }}</a>
+				{{ end }}
+			</span>
+		</div>
+
+	</div>
 </div>

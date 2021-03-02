@@ -1,71 +1,161 @@
-{{ define "header" }}
-   {{/* We can override any block in the baseof file be defining it in the template */}}
-  {{ partial "page-header.html" . }}
+{{ define "page-meta" }}
+
+	<meta property="og:title" content="{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}">
+	{{ with .Params.Summary }}<meta property="og:description" content="{{ . }}">{{ end }}
+	<meta property="og:url" content="{{ .Permalink }}">
+	
+	{{/* Specific meta for Articles */}}
+	<meta property="og:type" content="article">
+	{{ with (.Date.Format "2006-01-02") }}<meta property="article:published_time" content="{{ . }}">{{ end }}
+	{{ with (.Lastmod.Format "2006-01-02") }}<meta property="article:modified_time" content="{{ . }}">{{ end }}
+
+	{{/* Shows post's specific image if set, otherwise displays site's global o:g image */}}
+	{{ if (.Params.Image) }}
+	<meta property="og:image" content="{{ .Permalink }}{{ .Params.Image }}">
+	{{ else if (.Site.Params.siteImage) }}
+	<meta property="og:image" content="{{ $.Site.BaseURL }}{{ .Site.Params.SiteImage }}">
+	{{ end }}
+
 {{ end }}
 
+
+
+
+
 {{ define "main" }}
-  {{ $section := .Site.GetPage "section" .Section }}
-  <article class="flex-l flex-wrap justify-between mw7 center ph3">
-    <header class="mt5 w-100">
-      <aside class="instapaper_ignoref b tracked">
-          {{/*
-          CurrentSection allows us to use the section title instead of inferring from the folder.
-          https://gohugo.io/variables/page/#section-variables-and-methods
-          */}}
-        {{with .CurrentSection.Title }}{{. | upper }}{{end}}
-      </aside>
-      <!--{{ partial "social-share.html" . }}-->
-      <h1 class="f2 mt3 mb1">
-        {{- .Title -}}
-      </h1>
-      <p class="meta f5 mb4 mid-gray">
-        Published
-        <time class="dib" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-          {{- .Date.Format "January 2, 2006" -}}
-        </time>
-        {{ with .Params.author }}
-          by <strong>
-          {{ if reflect.IsSlice . }}
-              {{ delimit . ", " | markdownify }}
-          {{else}}
-              {{ . | markdownify }}
-          {{ end }}
-          </strong>
-        {{ end }}
-        {{/*
-          Show "reading time" and "word count" but only if one of the following are true:
-          1) A global config `params` value is set `show_reading_time = true`
-          2) A section front matter value is set `show_reading_time = true`
-          3) A page front matter value is set `show_reading_time = true`
-        */}}
-        {{ if (or (eq (.Param "show_reading_time") true) (eq $section.Params.show_reading_time true) )}}
-          <span class="reading-time"> - {{ .ReadingTime}} minutes read</span>
-          <span class="word-count"> - {{ .WordCount}} words</span>
-        {{ end }}
-      </p>
-    </header>
-    <div class="nested-copy-line-height lh-copy {{ $.Param "post_content_classes"  | default "serif"}} f4 nested-links nested-img mid-gray">
+{{ $section := .Site.GetPage "section" .Section }}
+<main role="main" class="main-content column is-8 is-offset-1">
+	<article class="h-entry">
 
-      {{- .Content -}}
+		{{/* partial "page-header.html" . */}}
 
-      {{- partial "tags.html" . -}}
+		{{ with .Params.Image }}
+		<div class="featured-image mb-6">
+			<img src="{{ . }}">
+		</div>
+		{{ end }}
 
-      {{ partial "social-share.html" . }}
+		{{ partial "toc.html" . }}
 
-      <!--div class="comments mt6 instapaper_ignoref">
-      {{ if .Site.DisqusShortname }}
-        {{ template "_internal/disqus.html" . }}
-      {{ end }}
-      {{ if .Site.Params.commentoEnable }}
-        {{- partial "commento.html" . -}}
-      {{ end }}
-      </div-->
+		<section class="content e-content">
+			{{- .Content -}}
+		</section>
+		
+		<footer class="content-footer">
+			{{- partial "about-author.html" . -}}
+			{{/*- partial "sharing-buttons.html" . -*/}}
+			{{/*- partial "tags.html" . -*/}}
+			{{/*- partial "categories.html" . -*/}}
+		</footer>
 
-    </div>
+		<aside>
+			{{- partial "menu-contextual.html" . -}}
+		</aside>
+		
+		<!--aside>
+			{{ with .PrevInSection }}
+				<a class="previous" href="{{ .Permalink }}">{{ .Title }}</a>
+			{{ end }}
+			{{ with .NextInSection }}
+				<a class="next" href="{{ .Permalink }}">{{ .Title }}</a>
+			{{ end }}
+		</aside-->
 
-    <aside class="w-30-l mt6-l">
-      {{- partial "menu-contextual.html" . -}}
-    </aside>
+	</article>
+</main>
+{{ end }}
 
-  </article>
+
+
+
+
+{{ define "sidebar" }}
+<div class="side column is-3">
+	<div class="sidebar">
+
+		<!--h3 class="title is-5">Published</h3-->
+
+		<div class="media mb-6">
+
+			{{ range .Params.authors }}
+				{{ with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+
+				<div class="media-left">
+					<figure class="image is-48x48">
+						<img src="{{ .Params.photo }}" class="u-photo" alt="{{ .Params.title }}">
+					</figure>
+				</div>
+
+				<div class="media-content">
+					<p class="title is-4 p-name">{{ .Params.title }}</p>
+					{{ with .Params.twitter_username }}<p class="subtitle is-6"><a class="u-url" target="_blank" rel="noopener" href="https://twitter.com/{{ . }}">@{{ . }}</a></p>{{ end }}
+				</div>
+				
+				{{ end }}
+			{{ end }}
+
+		</div><!-- .media -->
+
+		<div class="card meta mb-6">
+			<div class="card-content">
+
+				<dl class="icon-list">
+
+					{{ with .Date }}
+					<dt>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+							<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+						</svg>
+						Published
+					</dt>
+					<dd>
+						<time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+							{{- .Format "January 2, 2006" -}}
+						</time>
+					</dd>
+					{{ end }}
+
+					<dt>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+							<path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+						</svg>
+						Category
+					</dt>
+					<dd>
+						<a href="{{ "/categories/" | relLangURL }}{{ .Params.categories | urlize }}" class="p-category">
+							{{- .Params.categories -}}
+						</a>
+					</dd>
+
+					<dt>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+							<path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+						</svg>
+						Tags
+					</dt>
+					{{ range .Params.tags }}
+					<dd>
+						<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="p-category">
+							{{- . -}}
+						</a>
+					</dd>
+					{{ end }}
+
+				</dl>
+
+			</div>
+		</div>
+
+
+		{{/* if .Params.Author }}
+			{{ partial "about-author.html" . }}
+		{{ end */}}
+
+
+		<h3 class="title is-5 mt-6">Share</h3>
+
+		{{ partial "sharing-buttons.html" . }}
+
+	</div><!-- .sidebar -->
+</div><!-- .side -->
 {{ end }}

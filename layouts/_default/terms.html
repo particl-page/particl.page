@@ -1,22 +1,69 @@
 {{ define "main" }}
-    {{ $data := .Data }}
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray tc">
-      {{ .Content }}
-    </div>
-  </article>
-  <div class="mw8 center">
-    <section class="ph4">
-      {{ range $key, $value := .Data.Terms }}
-        <h2 class="f1">
-          <a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="link blue hover-black">
-            {{ $.Data.Singular | humanize }}: {{ $key }}
-          </a>
-        </h2>
-        {{ range $value.Pages }}
-          {{ partial "summary.html" . }}
-        {{ end }}
-      {{ end }}
-    </section>
-  </div>
+{{ $data := .Data }}
+<main role="main" class="main-content column">
+
+	<article>
+		<div>
+			{{ .Content }}
+		</div>
+	</article>
+
+	<!--div>
+		<section>
+			{{ range $key, $value := .Data.Terms }}
+			<h2>
+				<a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}">
+					{{ $.Data.Singular | humanize }}: {{ $key }}
+				</a>
+			</h2>
+			{{ range $value.Pages }}
+			{{ partial "summary.html" . }}
+			{{ end }}
+			{{ end }}
+		</section>
+	</div-->
+
+	{{/* range .Data.Terms.Alphabetical }}
+
+	<article class="list-item h-entry">
+		<h3 class="p-name">
+			<a href="{{ .Page.Permalink }}">
+				{{ .Page.Title }}
+				<span class="count tag">{{ .Count }}</span>
+				<p>
+					{{ .Page.Params.Summary }}
+				</p>
+			</a>
+		</h3>
+	</article>
+
+	{{ end */}}
+	
+	<div class="columns is-multiline">
+
+		{{ range .Pages }}
+			<div class="column is-6">
+				<div class="card block">
+					<div class="card-content">
+						<div class="media">
+							{{ with .Params.image }}
+								<div class="media-left">
+									<figure class="image is-48x48">
+										<a href="{{ $.Permalink }}"><img src="{{ . }}" alt="{{ $.Title }}"></a>
+									</figure>
+								</div>
+							{{ end }}
+							<div class="media-content">
+								<p class="title is-4"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+								<p class="subtitle is-6">{{ .Params.summary }}</p>
+							</div>
+						</div>
+					</div>
+				</div><!-- .card -->
+			</div><!-- .column -->
+		{{ end }}
+
+	</div><!-- .columns -->
+
+</main>
 {{ end }}

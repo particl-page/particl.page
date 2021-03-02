@@ -1,15 +1,106 @@
 {{ define "main" }}
-  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-      {{- .Content -}}
-    </section>
-    <section class="flex-ns flex-wrap justify-center mw9 center">
-      {{ range .Paginator.Pages }}
-        <div class="relative w-100 w-30-l ma3 bg-white">
-          {{- partial "summary.html" . -}}
-        </div>
-      {{ end }}
-    </section>
-    {{- template "_internal/pagination.html" . -}}
-  </article>
+<main role="main" class="main-content column is-8 is-offset-1">
+	<article>
+		
+		<span>
+			{{- .Content -}}
+		</span>
+		
+		<section><!-- class="columns is-mobile is-multiline" -->
+			{{ range .Paginator.Pages }}
+			<!--div class="column is-6-mobile is-6-tablet"-->
+				{{- partial "summary-article.html" . -}}
+			<!--/div-->
+			{{ end }}
+		</section>
+
+		{{- template "_internal/pagination.html" . -}}
+
+	</article>
+</main>
+{{ end }}
+
+
+
+{{ define "sidebar" }}
+<div class="side column is-3">
+	<div class="sidebar">
+
+		<aside class="taxonomy-list block">
+			<h3 class="title is-5">Categories</h3>
+
+			<div class="card">
+				<div class="card-content">
+					<ul>
+						{{ range .Site.Taxonomies.categories }}
+						<li>
+							<a href="{{ .Page.Permalink }}" class="item">
+								<span class="name">{{ .Page.Title }}</span>
+								<span class="tag is-darker">{{ .Count }}</span>
+							</a>
+						</li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>
+		</aside>
+		
+		<aside class="taxonomy-list block">
+			<h3 class="title is-5">Browse tags</h3>
+
+			<div class="card">
+				<div class="card-content">
+					<ul>
+						{{ range .Site.Taxonomies.tags }}
+						<li>
+							<a href="{{ .Page.Permalink }}" class="item">
+								<span class="name">{{ .Page.Title }}</span>
+								<span class="tag is-darker">{{ .Count }}</span>
+							</a>
+						</li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>
+		</aside>
+
+
+		<aside class="taxonomy-list block">
+			<h3 class="title is-5">By Authors</h3>
+
+			<div class="card">
+				<div class="card-content">
+					<ul>
+						{{ range .Site.Taxonomies.authors }}
+						<li>
+							<a href="{{ .Page.Permalink }}" class="item">
+								<span class="name">{{ .Page.Title }}</span>
+								<span class="tag is-darker">{{ .Count }}</span>
+							</a>
+						</li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>
+		</aside>
+
+
+
+		<aside class="submit block content">
+			<h3 class="title is-5">Submit an article</h3>
+
+			<div class="card">
+				<div class="card-content">
+					<p>
+						Would you like to contribute your own Particl-themed article?
+					</p>
+					<p class="buttons">
+						<a target="_blank" rel="noopener" href="https://github.com/particl-page/particl.page/issues/new?assignees=xe-nonymous&labels=enhancement&template=articles--submit-a-new-article.md&title=%5BNew+article%5D+" class="button is-primary is-outlined">Submit a new article {{ partial "new-window-icon.html" . }}</a>
+					</p>
+				</div>
+			</div>
+		</aside>
+
+	</div>
+</div>
 {{ end }}

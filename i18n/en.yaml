@@ -1,0 +1,7 @@
+# header top bar
+- id: show-menu
+  translation: "Show menu"
+- id: translations
+  translation: "Translations"
+- id: socials
+  translation: "Elsewhere"

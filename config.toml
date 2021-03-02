@@ -2,20 +2,27 @@ baseURL = "https://particl.page/"
 languageCode = "en-us"
 title = "Particl.page"
 
-MetaDataFormat = "yaml"
-DefaultContentLanguage = "en"
-#SectionPagesMenu = "main"
-Paginate = 5 # this is set low for demonstrating with dummy content. Set to a higher number
-googleAnalytics = ""
-enableRobotsTXT = true
+# Allows for automatic "last modified" for articles etc. (https://gohugo.io/variables/git/)
+enableGitInfo = false
 
-[sitemap]
-  changefreq = "monthly"
-  priority = 0.5
-  filename = "sitemap.xml"
+# Show all pages by default in this menu (if disabled, define menu location and weight for each page manually)
+#sectionPagesMenu = main
+
+# https://gohugo.io/content-management/urls/
+[permalinks]
+  post = "/:sections/:slug/"
+  ecosystem = "/:sections/:slug/"
 
 [params]
-  description = "Community-run site around privacy-focused crypto project Particl.io"
+  # SEO & Open:graph meta
+  siteDescription = "Community-run site around privacy-focused crypto Particl Project"
+  siteImage = "images/particl_basics-poster.jpg" # 1200 × 630 px image in /static folder
+  siteVersion = "3.0"
+
+  # displays in footer's copyright (until this year)
+  copyrightSince = 2018
+
+  # Global social links (via partials/social-follow.html)
   facebook = ""
   twitter = "https://twitter.com/particl_page"
   medium = "https://medium.com/particl-page"
@@ -24,23 +31,36 @@ enableRobotsTXT = true
   github = "https://github.com/particl-page"
   gitlab = ""
   linkedin = ""
-  mastodon = ""
+  mastodon = "https://mstdn.social/@particl_page"
   slack = ""
   stackoverflow = ""
-  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
-  background_color_class = "bg-black"
-  show_reading_time = true
-  post_content_classes = "sans-serif"
-  featured_image = "/images/particl-basics/particl_basics-poster.jpg"
-  recent_posts_number = 3
-  custom_css = ["particl-page.css"]
 
-# https://gohugo.io/content-management/urls/
-[permalinks]
-  posts = "/:year/:slug/"
-  projects = "/:sections/:slug/"
+  # Authors (for microformats.io)
+  [params.authors]
+    name = "xe-non"
+    email = "xe-non@particl.page"
+    #image = 
 
+
+# -- Taxonimies definitions (in format = "singular = plural")
+# If you don't want to use them, replace them with:
+# disableKinds:
+#  - taxonomy
+#  - term
 [taxonomies]
   category = "categories"
-  series = "series"
   tag = "tags"
+  series = "series"
+  author = "authors"
+  project = "projects" # type of project in ecosystem (separate category)
+
+
+[frontmatter]
+  date = ["date", "publishDate"]
+  lastmod = ["lastmod"]
+  publishDate = ["publishDate", "date"]
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"

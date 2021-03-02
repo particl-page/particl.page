@@ -1,0 +1,27 @@
+{{/*
+  
+  INCLUDE SHORTCODE
+
+  Usage:
+    {{< include file="relative/path/from/hugo/root" language="go" markdown=[false|true] >}}
+
+  Docs:
+    https://geekdocs.de/shortcodes/includes/
+
+  Source:
+    https://github.com/thegeeklab/hugo-geekdoc/blob/master/layouts/shortcodes/include.html
+    (MIT licence)
+
+*/}}
+
+
+{{$file := .Get "file"}}
+<div class="gdoc-include">
+{{- if eq (.Get "markdown") "true" -}}
+{{- $file | readFile | markdownify -}}
+{{- else if (.Get "language") -}}
+{{- highlight ($file | readFile) (.Get "language") (default "linenos=table" (.Get "options")) -}}
+{{- else -}}
+{{ $file | readFile | safeHTML }}
+{{- end -}}
+</div>

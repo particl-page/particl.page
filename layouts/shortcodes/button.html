@@ -1,0 +1,19 @@
+{{/*
+  
+  BUTTON SHORTCODE
+
+  Usage:
+    {{< button href="https://example.com" class="some-class" title="Example link" target="_blank" >}}
+      Button's text
+    {{< /button >}}
+
+*/}}
+
+<a
+  {{ with .Get "href" }}href="{{.}}"{{ end }}
+  {{ with .Get "title" }}title="{{.}}"{{ end }}
+  {{ with .Get "target" }}target="{{.}}"{{ end }}
+  class="button{{ with .Get "class" }} {{.}}{{ end }}"
+>
+  {{ .Inner }}
+</a>
