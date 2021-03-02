@@ -14,6 +14,7 @@ figure {
 }
 
 video { border-radius: 4px; }
+code { word-wrap: anywhere; }
 
 .button {
   &.is-dark {
@@ -39,6 +40,9 @@ nav.navbar {
   &.is-gradient {
     @include gradient(#0C1010,#030404);
     box-shadow: 0 1px var(--hr);
+    .navbar-menu {
+      background: var(--bg-lighter);
+    }
     .subtitle {
       color: var(--text-muted);
       max-width: 40rem;
@@ -100,8 +104,17 @@ nav.navbar {
 
 .summary-article {
   margin-bottom: 3rem;
+  .media {
+    display: block;
+    @include break(d) { display: flex; }
+    .media-left {
+      margin-right: 0;
+      @include break(d) { margin-right: 1rem; }
+    }
+  }
   .featured-image {
-    width: 15rem;
+    margin-bottom: 1rem;
+    @include break(d) { margin-bottom: 0; width: 15rem; }
   }
   .meta {
     color: var(--text-darker);
@@ -132,6 +145,7 @@ article {
       font-size: 1.1em;
       color: var(--primary);
       user-select: all;
+      word-wrap: anywhere;
     }
   }
 

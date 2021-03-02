@@ -7521,6 +7521,9 @@ figure img {
 video {
   border-radius: 4px; }
 
+code {
+  word-wrap: anywhere; }
+
 .button.is-dark {
   background: var(--bg-lightest); }
   .button.is-dark:hover, .button.is-dark:focus {
@@ -7538,6 +7541,8 @@ nav.navbar .social svg {
   background: #0C1010;
   background: linear-gradient(to bottom, #0C1010 0%, #030404 100%);
   box-shadow: 0 1px var(--hr); }
+  .hero.is-gradient .navbar-menu {
+    background: var(--bg-lighter); }
   .hero.is-gradient .subtitle {
     color: var(--text-muted);
     max-width: 40rem;
@@ -7591,8 +7596,22 @@ nav.navbar .social svg {
 
 .summary-article {
   margin-bottom: 3rem; }
+  .summary-article .media {
+    display: block; }
+    @media only screen and (min-width: 1024px) {
+      .summary-article .media {
+        display: flex; } }
+    .summary-article .media .media-left {
+      margin-right: 0; }
+      @media only screen and (min-width: 1024px) {
+        .summary-article .media .media-left {
+          margin-right: 1rem; } }
   .summary-article .featured-image {
-    width: 15rem; }
+    margin-bottom: 1rem; }
+    @media only screen and (min-width: 1024px) {
+      .summary-article .featured-image {
+        margin-bottom: 0;
+        width: 15rem; } }
   .summary-article .meta {
     color: var(--text-darker); }
     .summary-article .meta .author-photo {
@@ -7616,7 +7635,8 @@ article.pool .pool-address {
   -webkit-user-select: all;
      -moz-user-select: all;
       -ms-user-select: all;
-          user-select: all; }
+          user-select: all;
+  word-wrap: anywhere; }
 
 .sidebar {
   position: -webkit-sticky;
