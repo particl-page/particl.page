@@ -10,7 +10,8 @@ tags:
   - "Staking"
   - "Particl Desktop"
 series:
-author: "xe-non"
+authors:
+  - "xe-non"
 aliases:
   - "/howto/staking-on-pool-particl-desktop"
 ---

@@ -9,7 +9,8 @@ tags:
   - "Staking"
 series:
   - "Particl Basics"
-author: "xe-non"
+authors:
+  - "xe-non"
 aliases:
   - "/post/2020-05-particl-basics-02-cold-staking"
 ---

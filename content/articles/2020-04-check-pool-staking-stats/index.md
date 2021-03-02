@@ -10,7 +10,8 @@ tags:
   - "Staking"
   - "Pool"
 series:
-author: "xe-non"
+authors:
+  - "xe-non"
 aliases:
   - "/howto/check-pool-staking-stats"
 ---

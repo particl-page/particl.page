@@ -10,7 +10,8 @@ tags:
   - "Privacy"
 series:
   - "Particl Basics"
-author: "xe-non"
+authors:
+  - "xe-non"
 aliases:
   - "/post/2020-04-particl-basics-01-privacy-coin"
 ---

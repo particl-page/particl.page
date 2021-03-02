@@ -10,7 +10,8 @@ tags:
   - "Staking"
   - "Particl Core"
 series:
-author: "xe-non"
+authors:
+  - "xe-non"
 aliases:
   - "/howto/staking-on-pool-particl-core-qt"
 ---

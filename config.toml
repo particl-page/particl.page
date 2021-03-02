@@ -51,6 +51,7 @@ enableGitInfo = false
   category = "categories"
   tag = "tags"
   series = "series"
+  author = "authors"
   project = "projects" # type of project in ecosystem (separate category)
 
 

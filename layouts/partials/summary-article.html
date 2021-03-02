@@ -31,15 +31,13 @@
 						<time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format "Jan 2, 2006" }}</time>
 					{{ end }}
 		
-					{{ if isset .Params "author" }}
-						<!-- loop through data/en/authors.yaml and grab author's name & photo -->
-						{{ $data := index .Site.Data .Site.Language.Lang }}
-						{{ range where $data.authors "name" "==" .Params.Author }}
-						by
-						<figure class="author-photo image is-16x16">
-							<img src="{{ .photo }}" alt="{{ .name }}" class="is-rounded">
-						</figure>
-						<span class="p-author h-card">{{ .name }}</span>
+					{{ range .Params.authors }}
+						{{ with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+							by
+							<figure class="author-photo image is-16x16">
+								<img src="{{ .Params.photo }}" alt="{{ .Params.title }}" class="is-rounded">
+							</figure>
+							<span class="p-author h-card">{{ .Params.title }}</span>
 						{{ end }}
 					{{ end }}
 

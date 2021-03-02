@@ -1,44 +1,44 @@
 <h3 class="title is-5">About Author</h3>
 
-{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ range .Params.authors }}
+  {{ with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
 
-{{ range where $data.authors "name" "==" .Params.Author }}
+    <div class="card h-card">
+      <div class="card-content">
+        <div class="media">
 
-  <div class="card h-card">
-    <div class="card-content">
-      <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="{{ .Params.photo }}" class="u-photo" alt="{{ .Params.title }}">
+            </figure>
+          </div>
 
-        <div class="media-left">
-          <figure class="image is-48x48">
-            <img src="{{ .photo }}" class="u-photo" alt="{{ .name }}">
-          </figure>
+          <div class="media-content">
+            <p class="title is-4 p-name">{{ .Params.title }}</p>
+            {{ with .Params.twitter_username }}<p class="subtitle is-6"><a class="u-url" target="_blank" rel="noopener" href="https://twitter.com/{{ . }}">@{{ . }}</a></p>{{ end }}
+          </div>
+        </div>
+    
+        <div class="content p-note">
+          {{ .Params.summary }}
         </div>
 
-        <div class="media-content">
-          <p class="title is-4 p-name">{{ .name }}</p>
-          {{ with .twitter_username }}<p class="subtitle is-6"><a class="u-url" target="_blank" rel="noopener" href="https://twitter.com/{{ . }}">@{{ . }}</a></p>{{ end }}
-        </div>
-      </div>
-  
-      <div class="content p-note">
-        {{ .bio }}
-      </div>
+        {{ if or (isset .Params "part_address") (isset . "btc_address") }}
+        <div class="addresses">
 
-      {{ if or (isset . "part_address") (isset . "btc_address") }}
-      <div class="addresses">
+          {{ with .Params.part_address }}
+          <a class="button is-small is-primary is-outlined" href="https://explorer.particl.io/address/{{ . }}" target="_blank" rel="noopener">Tip PART</a>
+          {{ end }}
 
-        {{ with .part_address }}
-        <a class="button is-small is-primary is-outlined" href="https://explorer.particl.io/address/{{ . }}" target="_blank" rel="noopener">Tip PART</a>
+          {{ with .Params.btc_address }}
+          <a class="button is-small is-warning is-outlined" href="https://blockchair.com/bitcoin/address/{{ . }}" target="_blank" rel="noopener">Tip BTC</a>
+          {{ end }}
+
+        </div><!-- .addresses -->
         {{ end }}
 
-        {{ with .btc_address }}
-        <a class="button is-small is-warning is-outlined" href="https://blockchair.com/bitcoin/address/{{ . }}" target="_blank" rel="noopener">Tip BTC</a>
-        {{ end }}
-
-      </div><!-- .addresses -->
-      {{ end }}
-
+      </div>
     </div>
-  </div>
 
+  {{ end }}
 {{ end }}
