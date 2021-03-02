@@ -5,7 +5,7 @@
 
       <div class="media-left">
 				<a href="{{ .Permalink }}">
-					<figure class="image">
+					<figure class="featured-image">
 						{{ if .Params.Image }}
 						<img src="{{ .Permalink }}{{ .Params.image }}" alt="{{ .Params.title }}">
 						{{ else }}
@@ -15,23 +15,37 @@
 				</a>
       </div>
 
+
       <div class="media-content">
+
         <p class="title is-5">
 					<a href="{{ .Permalink }}">
 						{{ .Title }}
 					</a>
 				</p>
-        <p class="meta subtitle is-6 mb-3">
+
+        <div class="meta subtitle is-6 mb-3">
+
 					{{ with .Date }}
-					Published
-					<time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format "Jan 2, 2006" }}</time>
+						Published
+						<time class="dt-published" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format "Jan 2, 2006" }}</time>
 					{{ end }}
 		
-					{{ with .Params.Author }}
-					by
-					<span class="p-author h-card">{{ . }}</span>
+					{{ if isset .Params "author" }}
+						<!-- loop through data/en/authors.yaml and grab author's name & photo -->
+						{{ $data := index .Site.Data .Site.Language.Lang }}
+						{{ range where $data.authors "name" "==" .Params.Author }}
+						by
+						<figure class="author-photo image is-16x16">
+							<img src="{{ .photo }}" alt="{{ .name }}" class="is-rounded">
+						</figure>
+						<span class="p-author h-card">{{ .name }}</span>
+						{{ end }}
 					{{ end }}
-				</p>
+
+				</div><!-- .meta -->
+
+
 				<div class="content p-summary">
 					{{ .Summary }}
 				</div>

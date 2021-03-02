@@ -7591,10 +7591,15 @@ nav.navbar .social svg {
 
 .summary-article {
   margin-bottom: 3rem; }
-  .summary-article .image {
+  .summary-article .featured-image {
     width: 15rem; }
   .summary-article .meta {
     color: var(--text-darker); }
+    .summary-article .meta .author-photo {
+      display: inline-block;
+      margin: 0 0.1rem 0 0.2rem;
+      position: relative;
+      top: 2px; }
 
 .content-footer {
   margin-top: 4rem; }

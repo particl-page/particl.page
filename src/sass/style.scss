@@ -100,11 +100,17 @@ nav.navbar {
 
 .summary-article {
   margin-bottom: 3rem;
-  .image {
+  .featured-image {
     width: 15rem;
   }
   .meta {
     color: var(--text-darker);
+    .author-photo {
+      display: inline-block;
+      margin: 0 0.1rem 0 0.2rem;
+      position: relative;
+      top: 2px;
+    }
   }
 }
 
