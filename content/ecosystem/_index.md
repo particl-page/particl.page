@@ -5,4 +5,6 @@ summary: "Collection of apps and services built on top of Particl by the communi
 menu:
   main:
     weight: 4
+aliases:
+  - "/project"
 ---

@@ -7,6 +7,9 @@ menu:
   main:
     weight: 4
 layout: "pool"
+aliases:
+  - "/project/cold-staking-pool"
+  - "/pool"
 ---
 
 ## About Pool

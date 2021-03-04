@@ -14,6 +14,7 @@ authors:
   - "xe-non"
 aliases:
   - "/howto/check-pool-staking-stats"
+  - "/howto/check-pool-staking-stats.html"
 ---
 
 We’ve recently launched pool staking statistics for individual addresses on [our Pool](https://pool.particl.page). To check your stats, you’ll need to know your pool staking address.
