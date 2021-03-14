@@ -3,8 +3,6 @@ title: Stats Dashboard
 image: "particl-stats-dashboard.jpg"
 slug: stats-dashboard
 summary: Tracking Particl stats in style, all-in-one
-#type: page
-#menu: main
 layout: "project"
 aliases:
   - "/project/stats-dashboard"

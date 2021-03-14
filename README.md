@@ -25,7 +25,7 @@ After you've done your changes, push to Github and submit a new PR.
 
 - [x] projects > ecosystem
   - [ ] demarkets
-  - [ ] wizardswap
+  - [x] wizardswap
   - [ ] partyman
   - [ ] localparticl
   - [ ] private coldstaking script by Ben
