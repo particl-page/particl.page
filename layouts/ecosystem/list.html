@@ -6,9 +6,9 @@
 			{{- .Content -}}
 		</span>
 		
-		<section><!-- class="columns is-mobile is-multiline" -->
+		<section class="columns is-multiline">
 			{{ range .Paginator.Pages }}
-			<div class="column is-6-mobile is-6-tablet">
+			<div class="column is-6-tablet">
 				{{- partial "summary-ecosystem.html" . -}}
 			</div>
 			{{ end }}
