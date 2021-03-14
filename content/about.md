@@ -15,7 +15,7 @@ Community is at heart of every project, crypto or otherwise. We want to stimulat
 
 ## Contact
 
-- **Email:** xe-non @ particl.page (preferred)
+- **Email:** xe-non at particl.page ([PGP key](/keys/xe-non.pub.asc))
 - **Twitter:** [@particl_page](https://twitter.com/particl_page)
 - **Riot:** [@particl.page](https://riot.im/app/#/room/#particl:matrix.org)
 
