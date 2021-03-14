@@ -14,6 +14,8 @@ info:
   development: "Private"
 ---
 
+## About
+
 > Tracking Particl stats in style, all-in-one
 
 [Stats.particl.page](https://stats.particl.page) &ndash; our first ever project for Particl.
