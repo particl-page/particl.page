@@ -42,6 +42,7 @@ nav.navbar {
     box-shadow: 0 1px var(--hr);
     .navbar-menu {
       background: var(--bg-lighter);
+      @include break-from(1024px) { background: transparent; }
     }
     .subtitle {
       color: var(--text-muted);

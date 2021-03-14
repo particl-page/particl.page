@@ -20,6 +20,13 @@ $break-f: 1408px !default; // fullhd
 }
 
 
+// Custom responsivity (px-based, for when default breakpoints aren't enough)
+@mixin break-from($size) {
+  // Usage: @include break-from(741px) {  }
+  @media only screen and (min-width: $size) { @content; }
+}
+
+
 // @include gradient (<top-color>, <bottom-color>);
 @mixin gradient($top, $bottom) {
   background: $top;

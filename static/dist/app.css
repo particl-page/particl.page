@@ -7543,6 +7543,9 @@ nav.navbar .social svg {
   box-shadow: 0 1px var(--hr); }
   .hero.is-gradient .navbar-menu {
     background: var(--bg-lighter); }
+    @media only screen and (min-width: 1024px) {
+      .hero.is-gradient .navbar-menu {
+        background: transparent; } }
   .hero.is-gradient .subtitle {
     color: var(--text-muted);
     max-width: 40rem;
