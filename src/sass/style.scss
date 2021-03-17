@@ -150,6 +150,20 @@ article {
     }
   }
 
+  // Repo page
+  &.repo {
+    .apps-in-repo {
+      .app {
+        text-align: center;
+        .app-icon {
+          width: 1.9rem;
+          height: 1.9rem;
+          margin-bottom: 0.1rem;
+        }
+      }
+    }
+  }
+
 } // < article
 
 
@@ -275,4 +289,8 @@ footer.footer.is-dark {
   .button & {
     margin-left: 4px;
   }
+}
+
+.select-all {
+  user-select: all;
 }

@@ -1,0 +1,18 @@
+# Icons are used from F-droid's /icons/ folder -> copy over to /static/repo/apps/
+
+- name: "Particl Copay"
+  icon: "io.particl.copay.55100000.png"
+  link: "https://particl.io"
+
+- name: "Samourai Wallet"
+  icon: "com.samourai.wallet.179.png"
+  link: "https://samouraiwallet.com/features"
+
+- name: "Sentinel Wallet"
+  icon: "com.samourai.sentinel.52.png"
+  link: "https://samouraiwallet.com/sentinel"
+
+- name: "BlueWallet"
+  icon: "io.bluewallet.bluewallet.1614602255.png"
+  link: "https://bluewallet.io/"
+

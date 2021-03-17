@@ -7641,6 +7641,13 @@ article.pool .pool-address {
           user-select: all;
   word-wrap: anywhere; }
 
+article.repo .apps-in-repo .app {
+  text-align: center; }
+  article.repo .apps-in-repo .app .app-icon {
+    width: 1.9rem;
+    height: 1.9rem;
+    margin-bottom: 0.1rem; }
+
 .sidebar {
   position: -webkit-sticky;
   position: sticky;
@@ -7729,4 +7736,10 @@ footer.footer.is-dark {
 
 .button .new-window {
   margin-left: 4px; }
+
+.select-all {
+  -webkit-user-select: all;
+     -moz-user-select: all;
+      -ms-user-select: all;
+          user-select: all; }
 
