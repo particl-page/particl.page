@@ -16,7 +16,7 @@ layout: "repo"
 
 Our repo brings popular privacy-focused Android apps to your F-Droid!
 
-Starting small for now, we'll include more apps further down the road.
+Starting small for now, we'll include more apps further down the road. New updates will be coming either montly or when we see new app release.
 
 We're open to requests for new apps that you would like to see in the Particl.page Repo. [Request new apps](/about/) by contacting us.
 
