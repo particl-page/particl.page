@@ -1,6 +1,6 @@
 # particl.page
 
-Particl.page is a community-run effort to grow Particl ecosystem and offer useful user-centric tools. Now with articles and projects built by the community.
+[Particl.page](https://particl.page) is a community-run effort to grow Particl ecosystem and offer useful user-centric tools. Now with articles and projects built by the community.
 
 To submit a new article/tutorial or a project, please open a new Issue and follow the instructions there.
 
@@ -27,7 +27,7 @@ After you've done your changes, push to Github and submit a new PR.
   - [ ] demarkets
   - [x] wizardswap
   - [ ] partyman
-  - [ ] localparticl
+  - [x] localparticl
   - [ ] private coldstaking script by Ben
 
 - pages
@@ -41,4 +41,31 @@ After you've done your changes, push to Github and submit a new PR.
 
 after launch:
 - [ ] ping other projects for links back
+
+---
+
+## Shortcode cheatsheet
+
+**Images/Figures**
+
+```
+{{< img src="theonion.jpg" alt="Screenshot of the Onion homepage" >}}
+```
+
+```
+{{< figure
+  title=""
+  caption="Supply of Particl (PART) coins up to year 2060"
+  src="particl-coin-supply.png"
+  link="particl-coin-supply.png"
+>}}
+```
+
+**Buttons**
+
+```
+{{< button href="https://example.com" class="is-primary is-outlined" title="Example link" target="_blank" >}}
+Button's text
+{{< /button >}}
+```
 
