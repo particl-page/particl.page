@@ -1,8 +1,8 @@
 ---
 date: 2022-08-23T21:11:06+02:00
-title: "The sad end of an era"
+title: "The sad end of an era [updated]"
 slug: "pool-shutdown"
-summary: "How a series of unfortunate events killed our Pool as we knew it"
+summary: "How a series of unfortunate events killed our Pool as we knew it. And how we got it back up!"
 image: "particl-page_pool-min.jpg"
 categories: "News"
 tags: 
@@ -13,6 +13,10 @@ authors:
   - "xe-non"
 #aliases:
   #- ""
+---
+
+###### **Edit (Aug 28)**: We want to happily inform you all, that after more troubleshooting, we finally got the Pool back up and it's running without any hiccups as before! [Pool is back online!](https://pool.particl.page)
+
 ---
 
 > Our usual jokes aside, let's get real this time.
@@ -54,3 +58,6 @@ Even though no financial damage was done (not counting a PART or two from missed
 
 So we're reached the end of this pool. Time to get out and dry up.
 
+---
+
+###### **Edit (Aug 28)**: We want to happily inform you all, that after more troubleshooting, we finally got the Pool back up and it's running without any hiccups as before! [Pool is back online!](https://pool.particl.page)
